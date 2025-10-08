@@ -52,17 +52,17 @@ const packages = [
 
 export default function Packages() {
   return (
-    <section id="packages" className="py-16 sm:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="packages" className="py-16">
+      <div className="container mx-auto px-4">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+          <h2 className="text-3xl font-extrabold tracking-tight">
             Escolha seu Impulso
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Oferecemos uma variedade de pacotes para atender às suas necessidades. Todos os planos vêm com nossa garantia de satisfação.
           </p>
         </div>
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-8 grid-cols-1">
           {packages.map((pkg, index) => (
             <PackageCard key={index} pkg={pkg} />
           ))}

@@ -10,9 +10,9 @@ export default function Cta() {
 
   return (
     <section className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <div className="container mx-auto px-4 py-20 text-center">
         <Sparkles className="mx-auto h-12 w-12 text-amber-300" />
-        <h2 className="text-3xl md:text-4xl font-extrabold mt-4">
+        <h2 className="text-3xl font-extrabold mt-4">
           Pronto para Viralizar?
         </h2>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">

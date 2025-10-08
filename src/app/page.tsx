@@ -11,7 +11,7 @@ import Testimonials from "@/components/sections/testimonials";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
         <Hero />

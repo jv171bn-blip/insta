@@ -16,8 +16,8 @@ export default function Hero() {
             <div className="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
             <div className="blur-[106px] h-32 bg-gradient-to-r from-accent to-rose-400 dark:to-indigo-600"></div>
         </div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:pt-32 sm:pb-24 text-center relative">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight font-headline">
+      <div className="container mx-auto px-4 pt-24 pb-16 text-center relative">
+        <h1 className="text-4xl font-extrabold tracking-tight font-headline">
           Aumente Sua Presença no Instagram{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
             Instantaneamente
@@ -27,15 +27,15 @@ export default function Hero() {
           Obtenha seguidores reais e de alta qualidade no Instagram, entregues em minutos.
           Eleve sua prova social e desbloqueie novas oportunidades de crescimento hoje.
         </p>
-        <div className="mt-8 flex justify-center items-center gap-4 flex-wrap">
-          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={scrollToPackages}>
+        <div className="mt-8 flex flex-col justify-center items-center gap-4">
+          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full" onClick={scrollToPackages}>
             Comece Agora <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-          <Button variant="outline" size="lg" onClick={scrollToPackages}>
+          <Button variant="outline" size="lg" onClick={scrollToPackages} className="w-full">
             Ver Pacotes
           </Button>
         </div>
-        <div className="mt-8 flex justify-center items-center gap-2">
+        <div className="mt-8 flex flex-col justify-center items-center gap-2 text-center">
           <div className="flex text-amber-400">
             <Star className="h-5 w-5 fill-current" />
             <Star className="h-5 w-5 fill-current" />
@@ -43,7 +43,7 @@ export default function Hero() {
             <Star className="h-5 w-5 fill-current" />
             <Star className="h-5 w-5 fill-current" />
           </div>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground px-8">
             Avaliado como 4.9/5 por mais de 10.000 clientes satisfeitos
           </p>
         </div>

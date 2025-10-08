@@ -30,17 +30,17 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-muted/50 py-16 sm:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-muted/50 py-16">
+      <div className="container mx-auto px-4">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+          <h2 className="text-3xl font-extrabold tracking-tight">
             Obtenha Seguidores em 4 Passos Simples
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Nosso processo é projetado para ser rápido, simples e completamente seguro.
           </p>
         </div>
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-8 grid-cols-1">
           {steps.map((step, index) => (
             <Card key={index} className="text-center bg-card">
               <CardHeader>
