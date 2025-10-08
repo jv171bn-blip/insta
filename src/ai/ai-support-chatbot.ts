@@ -79,7 +79,7 @@ const prompt = ai.definePrompt({
   input: {schema: AskQuestionInputSchema},
   output: {schema: AskQuestionOutputSchema},
   tools: [getRelevantFaqs],
-  prompt: `Você é um chatbot de suporte ao cliente para o InstaImpulso, um serviço que vende seguidores para o Instagram. Use a ferramenta getRelevantFaqs para responder à pergunta do usuário e responda apenas com base nas FAQs. Se nenhuma FAQ for relevante, responda que você não pode responder à pergunta.
+  prompt: `Você é um chatbot de suporte ao cliente para o Insta Turbo, um serviço que vende seguidores para o Instagram. Use a ferramenta getRelevantFaqs para responder à pergunta do usuário e responda apenas com base nas FAQs. Se nenhuma FAQ for relevante, responda que você não pode responder à pergunta.
 
 Pergunta do usuário: {{{question}}}`,
 });

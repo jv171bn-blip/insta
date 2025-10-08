@@ -87,11 +87,11 @@ export default function Chatbot() {
           <div className="flex items-center gap-3">
             <Avatar>
               <AvatarFallback className="bg-primary-foreground text-primary">
-                II
+                IT
               </AvatarFallback>
             </Avatar>
             <div>
-              <h3 className="font-bold text-primary-foreground">Suporte InstaImpulso</h3>
+              <h3 className="font-bold text-primary-foreground">Suporte Insta Turbo</h3>
               <p className="text-xs text-primary-foreground/80">
                 Normalmente respondemos instantaneamente
               </p>
@@ -113,7 +113,7 @@ export default function Chatbot() {
             >
               {message.sender === "bot" && (
                 <Avatar className="h-6 w-6">
-                  <AvatarFallback className="bg-primary text-primary-foreground text-xs">II</AvatarFallback>
+                  <AvatarFallback className="bg-primary text-primary-foreground text-xs">IT</AvatarFallback>
                 </Avatar>
               )}
               <div
@@ -130,7 +130,7 @@ export default function Chatbot() {
            {isLoading && (
             <div className="flex items-end gap-2 justify-start">
               <Avatar className="h-6 w-6">
-                <AvatarFallback className="bg-primary text-primary-foreground text-xs">II</AvatarFallback>
+                <AvatarFallback className="bg-primary text-primary-foreground text-xs">IT</AvatarFallback>
               </Avatar>
               <div className="max-w-[75%] rounded-2xl px-4 py-2 text-sm bg-muted text-muted-foreground rounded-bl-none">
                 <div className="flex items-center space-x-1">
