@@ -18,12 +18,17 @@ const comboPackagesData = [
 ];
 
 const packages = comboPackagesData.map(pkg => {
-  // Since we increased the followers by 50%, we need to find the original follower count to match the price.
-  const originalFollowers = Math.round(pkg.followers / 1.5);
-  const followerPackage = followerPackagesData.find(fp => fp.followers / 1.5 === originalFollowers / 1.5);
+  // To find the original follower package, we need to reverse the 50% increase.
+  const originalFollowerCount = pkg.followers / 1.5;
   
-  // Use the raw price from follower packages as the base
-  const basePrice = followerPackage ? followerPackage.price : (originalFollowers / 100); // Fallback price
+  // Find the corresponding follower package from the original data.
+  const followerPackage = followerPackagesData.find(fp => fp.followers / 1.5 === originalFollowerCount);
+  
+  // If a matching package is found, use its price. Otherwise, calculate a fallback.
+  // The price in followerPackagesData is the *base* price for the original follower count.
+  const basePrice = followerPackage 
+    ? followerPackage.price
+    : (originalFollowerCount / 2250) * 9.90; // Fallback based on the smallest package ratio
   
   // The full price of the combo is the base follower price + 15% for the likes
   const comboPrice = basePrice * 1.15; 
@@ -33,8 +38,8 @@ const packages = comboPackagesData.map(pkg => {
 
   return {
     ...pkg,
-    originalPrice: Math.round(comboPrice), // Show the calculated full combo price as the "from" price
-    price: Math.round(finalPrice), // Show the final discounted price
+    originalPrice: comboPrice, // Show the calculated full combo price as the "from" price
+    price: finalPrice, // Show the final discounted price
   }
 });
 
@@ -64,8 +69,8 @@ export default function ComboPackages() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden lg:flex" />
-          <CarouselNext className="hidden lg:flex" />
+          <CarouselPrevious />
+          <CarouselNext />
         </Carousel>
       </div>
     </section>
