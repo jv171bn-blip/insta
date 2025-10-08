@@ -26,8 +26,8 @@ export default function ComboPackages() {
     <section id="combo-packages" className="py-16 bg-muted/50">
       <div className="container mx-auto px-0 pt-4">
         <div className="text-center px-4">
-          <h2 className="text-3xl font-extrabold tracking-tight">
-            ✨ PROMOÇÕES DO MÊS ✨
+          <h2 className="text-3xl font-extrabold tracking-tight whitespace-nowrap">
+            <span>✨</span> PROMOÇÕES DO MÊS <span>✨</span>
           </h2>
         </div>
         <Carousel
