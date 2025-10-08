@@ -7,8 +7,6 @@ const packages = [
     features: [
       "Seguidores de Alta Qualidade",
       "Entrega Instantânea",
-      "Suporte 24/7",
-      "Não é Necessário Senha",
     ],
   },
   {
@@ -19,8 +17,6 @@ const packages = [
       "Seguidores de Alta Qualidade",
       "Entrega Instantânea",
       "Suporte 24/7",
-      "Não é Necessário Senha",
-      "Garantia de Recarga de 30 Dias",
     ],
   },
   {
@@ -30,9 +26,6 @@ const packages = [
     features: [
       "Seguidores de Alta Qualidade",
       "Entrega Instantânea",
-      "Suporte 24/7",
-      "Não é Necessário Senha",
-      "Garantia de Recarga de 30 Dias",
       "Suporte Prioritário",
     ],
   },
@@ -41,10 +34,7 @@ const packages = [
     price: 89.99,
     features: [
       "Seguidores de Alta Qualidade",
-      "Opção de Entrega Gradual",
-      "Suporte 24/7",
-      "Não é Necessário Senha",
-      "Garantia de Recarga de 30 Dias",
+      "Entrega Gradual",
       "Suporte Prioritário",
     ],
   },
@@ -59,7 +49,7 @@ export default function Packages() {
             Escolha seu Impulso
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Oferecemos uma variedade de pacotes para atender às suas necessidades. Todos os planos vêm com nossa garantia de satisfação.
+            Oferecemos uma variedade de pacotes para atender às suas necessidades.
           </p>
         </div>
         <div className="mt-12 grid gap-8 grid-cols-1">

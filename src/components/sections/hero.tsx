@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const scrollToPackages = () => {
@@ -24,8 +24,7 @@ export default function Hero() {
           </span>
         </h1>
         <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Obtenha seguidores reais e de alta qualidade no Instagram, entregues em minutos.
-          Eleve sua prova social e desbloqueie novas oportunidades de crescimento hoje.
+          Obtenha seguidores de alta qualidade, entregues em minutos.
         </p>
         <div className="mt-8 flex flex-col justify-center items-center gap-4">
           <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full" onClick={scrollToPackages}>
@@ -34,18 +33,6 @@ export default function Hero() {
           <Button variant="outline" size="lg" onClick={scrollToPackages} className="w-full">
             Ver Pacotes
           </Button>
-        </div>
-        <div className="mt-8 flex flex-col justify-center items-center gap-2 text-center">
-          <div className="flex text-amber-400">
-            <Star className="h-5 w-5 fill-current" />
-            <Star className="h-5 w-5 fill-current" />
-            <Star className="h-5 w-5 fill-current" />
-            <Star className="h-5 w-5 fill-current" />
-            <Star className="h-5 w-5 fill-current" />
-          </div>
-          <p className="text-sm text-muted-foreground px-8">
-            Avaliado como 4.9/5 por mais de 10.000 clientes satisfeitos
-          </p>
         </div>
       </div>
     </section>
