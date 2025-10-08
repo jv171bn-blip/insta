@@ -1,12 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -17,7 +14,7 @@ const testimonials = [
   {
     name: "Jéssica P.",
     handle: "@jessfit",
-    text: "Eu estava cética no início, mas o InstaImpulso entregou! Meu engajamento disparou e me ajudou a conseguir meu primeiro contrato com uma marca. Muito grata!",
+    text: "Eu estava cética no início, mas o InstaTurbo entregou! Meu engajamento disparou e me ajudou a conseguir meu primeiro contrato com uma marca. Muito grata!",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-1"),
   },
   {
@@ -32,11 +29,23 @@ const testimonials = [
     text: "Os seguidores foram entregues super rápido e parecem reais. Meu perfil parece muito mais profissional agora. Recomendo muito para qualquer aspirante a influenciador.",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-3"),
   },
-    {
+  {
     name: "David L.",
     handle: "@davidleephotos",
     text: "Simples, rápido e eficaz. É a maneira perfeita de impulsionar seu crescimento no Instagram e ganhar aquela valiosa prova social.",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-4"),
+  },
+  {
+    name: "Ana F.",
+    handle: "@anacooks",
+    text: "O serviço superou minhas expectativas. A entrega foi quase instantânea e a qualidade dos perfis era alta. Meu alcance orgânico melhorou desde que comprei!",
+    image: PlaceHolderImages.find((img) => img.id === "testimonial-5"),
+  },
+  {
+    name: "Bruno M.",
+    handle: "@bmdesign",
+    text: "Excelente suporte ao cliente e um serviço que realmente funciona. Consegui a prova social que precisava para o meu portfólio de design. Definitivamente usarei novamente.",
+    image: PlaceHolderImages.find((img) => img.id === "testimonial-6"),
   },
 ];
 
@@ -54,14 +63,14 @@ export default function Testimonials() {
         </div>
         <Carousel
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
           }}
           className="w-full mt-12"
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-4 py-4">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={index} className="pl-4 basis-3/4 md:basis-1/2 lg:basis-1/3">
                 <div className="p-1 h-full">
                   <Card className="h-full">
                     <CardContent className="flex flex-col items-start gap-4 p-6 h-full">
@@ -97,8 +106,6 @@ export default function Testimonials() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden lg:inline-flex"/>
-          <CarouselNext className="hidden lg:inline-flex"/>
         </Carousel>
       </div>
     </section>

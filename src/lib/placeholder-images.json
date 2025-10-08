@@ -23,6 +23,18 @@
       "description": "Um fotógrafo feliz para depoimentos",
       "imageUrl": "https://picsum.photos/seed/t4/100/100",
       "imageHint": "pessoa sorrindo"
+    },
+    {
+      "id": "testimonial-5",
+      "description": "Uma chef de cozinha para depoimentos",
+      "imageUrl": "https://picsum.photos/seed/t5/100/100",
+      "imageHint": "cozinheira retrato"
+    },
+    {
+      "id": "testimonial-6",
+      "description": "Um designer gráfico para depoimentos",
+      "imageUrl": "https://picsum.photos/seed/t6/100/100",
+      "imageHint": "designer retrato"
     }
   ]
 }
