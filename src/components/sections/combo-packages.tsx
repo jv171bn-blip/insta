@@ -20,7 +20,7 @@ const comboPackagesData = [
 const packages = comboPackagesData.map(pkg => {
   // Since we increased the followers by 50%, we need to find the original follower count to match the price.
   const originalFollowers = Math.round(pkg.followers / 1.5);
-  const followerPackage = followerPackagesData.find(fp => fp.followers === originalFollowers);
+  const followerPackage = followerPackagesData.find(fp => fp.followers / 1.5 === originalFollowers / 1.5);
   
   // Use the raw price from follower packages as the base
   const basePrice = followerPackage ? followerPackage.price : (originalFollowers / 100); // Fallback price
