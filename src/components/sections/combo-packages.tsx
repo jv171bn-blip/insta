@@ -7,18 +7,25 @@ import {
 import { packagesData as followerPackagesData } from "./packages";
 
 const comboPackagesData = [
-    { followers: 1000, likes: 500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
-    { followers: 5000, likes: 2500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isPopular: true, },
-    { followers: 10000, likes: 5000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isBestValue: true, },
-    { followers: 20000, likes: 10000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 1500, likes: 750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 7500, likes: 3750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isPopular: true, },
+    { followers: 15000, likes: 7500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isBestValue: true, },
     { followers: 30000, likes: 15000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
-    { followers: 50000, likes: 25000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 45000, likes: 22500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 75000, likes: 37500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
 ];
 
 const packages = comboPackagesData.map(pkg => {
-  const followerPackage = followerPackagesData.find(fp => fp.followers === pkg.followers);
+  // Since we increased the followers by 50%, we need to find the original follower count to match the price.
+  const originalFollowers = Math.round(pkg.followers / 1.5);
+  const followerPackage = followerPackagesData.find(fp => {
+    // Find the original package to get the base price from
+    const originalFpFollowers = Math.round(fp.followers / 1.5);
+    return originalFpFollowers === originalFollowers
+  });
+  
   // Use the raw price from follower packages as the base
-  const basePrice = followerPackage ? followerPackage.price : pkg.followers / 100; // Fallback price
+  const basePrice = followerPackage ? followerPackage.price : (originalFollowers / 100); // Fallback price
   
   // The full price of the combo is the base follower price + 15% for the likes
   const comboPrice = basePrice * 1.15; 
