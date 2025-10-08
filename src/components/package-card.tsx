@@ -220,7 +220,7 @@ export default function PackageCard({ pkg }: Props) {
         <CardHeader className="items-center text-center pt-8">
             <div className="flex items-center justify-center gap-4">
               <div className="text-center">
-                <CardTitle className="text-4xl font-extrabold text-primary">
+                <CardTitle className="text-3xl font-extrabold text-primary">
                   {formattedFollowers}
                 </CardTitle>
                 <CardDescription className="text-md font-medium flex items-center justify-center gap-1">
@@ -231,7 +231,7 @@ export default function PackageCard({ pkg }: Props) {
                 <>
                     <Plus className="h-8 w-8 text-muted-foreground" />
                     <div className="text-center">
-                        <CardTitle className="text-4xl font-extrabold text-primary">
+                        <CardTitle className="text-3xl font-extrabold text-primary">
                         {formattedLikes}
                         </CardTitle>
                         <CardDescription className="text-md font-medium flex items-center justify-center gap-1">
