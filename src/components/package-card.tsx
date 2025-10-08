@@ -188,7 +188,7 @@ export default function PackageCard({ pkg }: Props) {
     <>
       <Card
         className={cn(
-          "flex flex-col transform hover:-translate-y-2 transition-transform duration-300",
+          "flex flex-col transform hover:-translate-y-2 transition-transform duration-300 relative hover:z-10",
           pkg.isPopular && "border-primary border-2 shadow-primary/20 shadow-lg"
         )}
       >

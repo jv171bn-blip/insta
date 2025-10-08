@@ -24,7 +24,7 @@ const packages = packagesData.map(pkg => ({
 export default function Packages() {
   return (
     <section id="packages" className="py-16">
-      <div className="container mx-auto px-0 overflow-x-hidden">
+      <div className="container mx-auto px-0">
         <div className="text-center px-4">
           <h2 className="text-3xl font-extrabold tracking-tight">
             Escolha seu Pacote
@@ -40,7 +40,7 @@ export default function Packages() {
           }}
           className="w-full mt-12"
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-4 py-4">
             {packages.map((pkg, index) => (
               <CarouselItem key={index} className="pl-4 basis-3/4">
                 <div className="p-1">
