@@ -1,9 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowDown, ArrowRight, CheckCircle } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-export default function Hero() {
+export default function Hero({ onShowHowItWorks }: { onShowHowItWorks: () => void }) {
   const scrollToPackages = () => {
     document.getElementById("packages")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -26,11 +27,15 @@ export default function Hero() {
         <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
           Obtenha seguidores brasileiros de alta qualidade, entregues em minutos e com segurança total.
         </p>
-        <div className="mt-8 flex flex-col justify-center items-center gap-4">
-          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full" onClick={scrollToPackages}>
+        <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto" onClick={scrollToPackages}>
             Quero Crescer Agora <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-          <div className="mt-4 flex flex-col items-start gap-2 text-sm text-muted-foreground">
+          <Button size="lg" variant="outline" className="w-full sm:w-auto" onClick={onShowHowItWorks}>
+            Como Funciona? <ArrowDown className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+         <div className="mt-8 flex justify-center items-center gap-2 text-sm text-muted-foreground sm:gap-6 flex-wrap">
             <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
                 <span>+10.000 clientes satisfeitos</span>
@@ -44,7 +49,6 @@ export default function Hero() {
                 <span>Suporte 24h</span>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );
