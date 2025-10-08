@@ -207,17 +207,15 @@ export default function PackageCard({ pkg }: Props) {
           pkg.isPopular && "border-primary border-2 shadow-primary/20 shadow-lg"
         )}
       >
-        {pkg.isPopular && (
+        {pkg.isPopular ? (
           <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary">
             Mais Popular
           </Badge>
-        )}
-         {pkg.isBestValue && (
+        ) : pkg.isBestValue ? (
           <Badge variant="secondary" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-white">
             Melhor Valor
           </Badge>
-        )}
-        {pkg.isDiscount && (
+        ) : pkg.isDiscount && (
           <Badge variant="destructive" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white border-green-600">
             30% OFF
           </Badge>
