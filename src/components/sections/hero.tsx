@@ -60,15 +60,17 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="mt-8 rounded-lg p-4 max-w-md mx-auto bg-green-500 text-white">
-            <div className="flex justify-center items-center gap-3">
-              <WhatsAppIcon />
-              <div>
-                <p className="text-left font-semibold">
-                  Realize sua compra pelo site
+          <div className="mt-8 rounded-lg p-4 max-w-md mx-auto bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg border border-green-700">
+            <div className="flex justify-center items-center gap-4">
+              <div className="flex-shrink-0">
+                <WhatsAppIcon />
+              </div>
+              <div className="text-left">
+                <p className="font-bold">
+                  Prefere comprar pelo WhatsApp?
                 </p>
-                <p className="text-left text-sm text-green-100">
-                  Ou chame nosso atendente 24h/7!
+                <p className="text-sm text-green-100">
+                  Nosso atendente está disponível 24h por dia!
                 </p>
               </div>
             </div>
