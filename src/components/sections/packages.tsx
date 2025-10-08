@@ -18,8 +18,8 @@ export const packagesData = [
 
 const packages = packagesData.map(pkg => ({
   ...pkg,
-  originalPrice: pkg.price,
-  price: pkg.price * 0.7,
+  originalPrice: Math.round(pkg.price),
+  price: Math.round(pkg.price * 0.7),
 }));
 
 

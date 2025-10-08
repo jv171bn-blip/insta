@@ -158,7 +158,7 @@ export default function PackageCard({ pkg }: Props) {
                 <p className="text-2xl font-bold text-primary">{username}</p>
               </div>
               <div className="text-center text-4xl font-bold text-accent">
-                R${pkg.price.toFixed(2).replace('.', ',')}
+                R${pkg.price.toFixed(0)}
               </div>
             </div>
             <Button onClick={handleConfirm} className="w-full mt-4 bg-accent hover:bg-accent/90">
@@ -252,10 +252,10 @@ export default function PackageCard({ pkg }: Props) {
           <div className="flex justify-center items-baseline gap-2">
             {pkg.originalPrice && (
                 <span className="text-2xl font-medium text-muted-foreground line-through">
-                    R${pkg.originalPrice.toFixed(2).replace('.', ',')}
+                    R${pkg.originalPrice.toFixed(0)}
                 </span>
             )}
-            <span className="text-4xl font-bold">R${pkg.price.toFixed(2).replace('.', ',')}</span>
+            <span className="text-4xl font-bold">R${pkg.price.toFixed(0)}</span>
             </div>
             <span className="text-muted-foreground">/pagamento único</span>
           </div>

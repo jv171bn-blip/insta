@@ -33,8 +33,8 @@ const packages = comboPackagesData.map(pkg => {
 
   return {
     ...pkg,
-    originalPrice: comboPrice, // Show the calculated full combo price as the "from" price
-    price: finalPrice, // Show the final discounted price
+    originalPrice: Math.round(comboPrice), // Show the calculated full combo price as the "from" price
+    price: Math.round(finalPrice), // Show the final discounted price
   }
 });
 
