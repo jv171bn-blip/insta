@@ -35,6 +35,7 @@ type Package = {
   originalPrice?: number;
   isPopular?: boolean;
   isBestValue?: boolean;
+  isDiscount?: boolean;
   features: string[];
 };
 
@@ -188,7 +189,7 @@ export default function PackageCard({ pkg }: Props) {
     <>
       <Card
         className={cn(
-          "flex flex-col transform hover:-translate-y-2 transition-transform duration-300 relative hover:z-10",
+          "flex flex-col transform hover:-translate-y-2 transition-transform duration-300 relative hover:z-20",
           pkg.isPopular && "border-primary border-2 shadow-primary/20 shadow-lg"
         )}
       >
@@ -200,6 +201,11 @@ export default function PackageCard({ pkg }: Props) {
          {pkg.isBestValue && (
           <Badge variant="secondary" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-white">
             Melhor Valor
+          </Badge>
+        )}
+        {pkg.isDiscount && (
+          <Badge variant="destructive" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white border-green-600">
+            30% OFF
           </Badge>
         )}
         <CardHeader className="items-center text-center pt-8">

@@ -6,12 +6,12 @@ import {
 } from "@/components/ui/carousel";
 
 const packagesData = [
-    { followers: 1000, price: 9.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 1000, price: 9.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
     { followers: 5000, price: 19.99, isPopular: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
     { followers: 10000, price: 29.99, isBestValue: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 20000, price: 39.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 30000, price: 59.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 50000, price: 79.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 20000, price: 39.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 30000, price: 59.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 50000, price: 79.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
 ];
 
 const packages = packagesData.map(pkg => ({
@@ -24,7 +24,7 @@ const packages = packagesData.map(pkg => ({
 export default function Packages() {
   return (
     <section id="packages" className="py-16">
-      <div className="container mx-auto px-0">
+      <div className="container mx-auto px-0 pt-4">
         <div className="text-center px-4">
           <h2 className="text-3xl font-extrabold tracking-tight">
             Escolha seu Pacote
