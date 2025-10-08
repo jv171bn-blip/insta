@@ -17,14 +17,19 @@ const comboPackagesData = [
 
 const packages = comboPackagesData.map(pkg => {
   const followerPackage = followerPackagesData.find(fp => fp.followers === pkg.followers);
+  // Use the raw price from follower packages as the base
   const basePrice = followerPackage ? followerPackage.price : pkg.followers / 100; // Fallback price
-  const comboPrice = basePrice * 1.35;
-  const finalPrice = comboPrice * 0.7; // Applying 30% discount
+  
+  // The full price of the combo is the base follower price + 15% for the likes
+  const comboPrice = basePrice * 1.15; 
+  
+  // Apply the 30% discount on top of the combo price
+  const finalPrice = comboPrice * 0.7; 
 
   return {
     ...pkg,
-    originalPrice: comboPrice,
-    price: finalPrice,
+    originalPrice: comboPrice, // Show the calculated full combo price as the "from" price
+    price: finalPrice, // Show the final discounted price
   }
 });
 
