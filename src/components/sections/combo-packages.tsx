@@ -29,9 +29,6 @@ export default function ComboPackages() {
           <h2 className="text-3xl font-extrabold tracking-tight">
             Nossos Combos: Seguidores + Curtidas
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Acelere seu crescimento com nossos pacotes combinados e economize!
-          </p>
         </div>
         <Carousel
           opts={{
