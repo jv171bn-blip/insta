@@ -27,7 +27,7 @@ export default function Packages() {
       <div className="container mx-auto px-0 pt-4">
         <div className="text-center px-4">
           <h2 className="text-3xl font-extrabold tracking-tight">
-            Escolha seu Pacote de Seguidores
+            🎯 Escolha seu Pacote de Seguidores
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Desconto de 30% para novos clientes do InstaTurbo

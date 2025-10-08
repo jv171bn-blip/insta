@@ -32,7 +32,7 @@ export default function Hero() {
         </div>
       <div className="container mx-auto px-4 pt-24 pb-16 text-center relative">
         <h1 className="text-4xl font-extrabold tracking-tight font-headline">
-          Aumente Sua Presença no Instagram{" "}
+          Aumente Sua Presença no Instagram 🚀{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
             Hoje Mesmo
           </span>

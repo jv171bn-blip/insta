@@ -37,7 +37,7 @@ export default function HowItWorks() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold tracking-tight">
-            Obtenha Seguidores em 4 Passos Simples
+            🗺️ Obtenha Seguidores em 4 Passos Simples
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Nosso processo é projetado para ser rápido, simples e completamente seguro.

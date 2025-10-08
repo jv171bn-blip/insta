@@ -39,7 +39,7 @@ export default function Faq() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold tracking-tight">
-            Perguntas Frequentes
+            🤔 Perguntas Frequentes
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Tem perguntas? Nós temos as respostas. Se você não encontrar o que procura, sinta-se à vontade para usar nosso chat de suporte.

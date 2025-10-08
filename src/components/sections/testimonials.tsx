@@ -46,7 +46,7 @@ export default function Testimonials() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold tracking-tight">
-            Amado por Criadores e Empresas
+            📣 Amado por Criadores e Empresas
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Não acredite apenas na nossa palavra. Veja o que nossos clientes têm a dizer.
