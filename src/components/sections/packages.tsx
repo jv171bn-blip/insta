@@ -9,7 +9,7 @@ import {
 
 export const packagesData = [
     { followers: 2250, price: 9.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
-    { followers: 5000, price: 24.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 5000, price: 24.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
     { followers: 11250, price: 49.90, isPopular: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
     { followers: 22500, price: 89.90, isBestValue: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
     { followers: 45000, price: 129.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
@@ -17,11 +17,14 @@ export const packagesData = [
     { followers: 112500, price: 299.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
 ];
 
-const packages = packagesData.map(pkg => ({
-  ...pkg,
-  originalPrice: pkg.price,
-  price: pkg.price * 0.7,
-}));
+const packages = packagesData.map(pkg => {
+  const finalPrice = pkg.price * 0.7;
+  return {
+    ...pkg,
+    originalPrice: pkg.price,
+    price: finalPrice,
+  };
+});
 
 
 export default function Packages() {
