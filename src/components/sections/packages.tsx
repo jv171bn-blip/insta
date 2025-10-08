@@ -30,7 +30,7 @@ export default function Packages() {
             Escolha seu Pacote
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Aproveite nosso desconto de 30% por tempo limitado!
+            Desconto de 30% para novos clientes do InstaTurbo
           </p>
         </div>
         <div className="mt-12 grid gap-8 grid-cols-1">
