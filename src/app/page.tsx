@@ -19,7 +19,7 @@ export default function Home() {
         <Packages />
         <SocialProof />
         <div className="container mx-auto px-4 py-12 text-center">
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" size="lg">
                 <Link href="/como-funciona">
                     Como Funciona? <ChevronRight className="ml-2 h-4 w-4" />
                 </Link>
