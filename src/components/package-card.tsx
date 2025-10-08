@@ -31,6 +31,8 @@ import {
 import { Input } from "./ui/input";
 import { Progress } from "./ui/progress";
 import { cn } from "@/lib/utils";
+import { usePackage } from "@/contexts/PackageContext";
+
 
 type Package = {
   followers: number;
@@ -56,6 +58,12 @@ export default function PackageCard({ pkg }: Props) {
   const [progress, setProgress] = useState(0);
   const [formattedFollowers, setFormattedFollowers] = useState<string | number>(pkg.followers);
   const [formattedLikes, setFormattedLikes] = useState<string | number | undefined>(pkg.likes);
+  const { setIsPackageSelected } = usePackage();
+
+  const handleOpenDialog = () => {
+    setIsPackageSelected(true);
+    setIsOpen(true);
+  };
 
   useEffect(() => {
     // Client-side only effect to format numbers and prevent hydration mismatch
@@ -265,7 +273,7 @@ export default function PackageCard({ pkg }: Props) {
         </CardContent>
         <CardFooter className="pt-6">
           <Button
-            onClick={() => setIsOpen(true)}
+            onClick={handleOpenDialog}
             className="w-full"
             variant={pkg.isPopular ? "default" : "outline"}
           >

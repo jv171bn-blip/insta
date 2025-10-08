@@ -42,7 +42,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-muted/50 py-16">
+    <section className="bg-muted/50 py-16 animate-step-in" style={{ animationFillMode: 'forwards' }}>
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold tracking-tight">
@@ -54,17 +54,17 @@ export default function Testimonials() {
         </div>
         <Carousel
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
           }}
-          className="w-full max-w-4xl mx-auto mt-12"
+          className="w-full mt-12"
         >
-          <CarouselContent>
+          <CarouselContent className="-ml-4">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index}>
-                <div className="p-1">
+              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <div className="p-1 h-full">
                   <Card className="h-full">
-                    <CardContent className="flex flex-col items-start gap-4 p-6">
+                    <CardContent className="flex flex-col items-start gap-4 p-6 h-full">
                       <div className="flex text-amber-400">
                           <Star className="h-4 w-4 fill-current" />
                           <Star className="h-4 w-4 fill-current" />
@@ -97,8 +97,8 @@ export default function Testimonials() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden lg:inline-flex"/>
+          <CarouselNext className="hidden lg:inline-flex"/>
         </Carousel>
       </div>
     </section>
