@@ -31,7 +31,6 @@ import {
 import { Input } from "./ui/input";
 import { Progress } from "./ui/progress";
 import { cn } from "@/lib/utils";
-import { usePackage } from "@/contexts/PackageContext";
 
 
 type Package = {
@@ -58,10 +57,8 @@ export default function PackageCard({ pkg }: Props) {
   const [progress, setProgress] = useState(0);
   const [formattedFollowers, setFormattedFollowers] = useState<string | number>(pkg.followers);
   const [formattedLikes, setFormattedLikes] = useState<string | number | undefined>(pkg.likes);
-  const { setIsPackageSelected } = usePackage();
 
   const handleOpenDialog = () => {
-    setIsPackageSelected(true);
     setIsOpen(true);
   };
 

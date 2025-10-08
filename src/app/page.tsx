@@ -11,10 +11,8 @@ import Packages from "@/components/sections/packages";
 import SocialProof from "@/components/sections/social-proof";
 import Testimonials from "@/components/sections/testimonials";
 import CustomPackages from "@/components/sections/custom-packages";
-import { PackageProvider, usePackage } from "@/contexts/PackageContext";
 
-function PageContent() {
-  const { isPackageSelected } = usePackage();
+export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background overflow-x-hidden">
       <Header />
@@ -25,20 +23,11 @@ function PageContent() {
         <CustomPackages />
         <SocialProof />
         <HowItWorks />
-        {isPackageSelected && <Testimonials />}
+        <Testimonials />
         <Faq />
         <Cta />
       </main>
       <Footer />
     </div>
-  );
-}
-
-
-export default function Home() {
-  return (
-    <PackageProvider>
-      <PageContent />
-    </PackageProvider>
   );
 }

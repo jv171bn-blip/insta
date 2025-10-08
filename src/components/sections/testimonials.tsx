@@ -42,7 +42,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-muted/50 py-16 animate-step-in" style={{ animationFillMode: 'forwards' }}>
+    <section className="bg-muted/50 py-16">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold tracking-tight">
@@ -54,7 +54,7 @@ export default function Testimonials() {
         </div>
         <Carousel
           opts={{
-            align: "center",
+            align: "start",
             loop: true,
           }}
           className="w-full mt-12"
