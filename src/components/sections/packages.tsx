@@ -1,4 +1,11 @@
 import PackageCard from "../package-card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const packagesData = [
     { followers: 1000, price: 9.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
@@ -28,11 +35,25 @@ export default function Packages() {
             Desconto de 30% para novos clientes do InstaTurbo
           </p>
         </div>
-        <div className="mt-12 grid gap-8 grid-cols-1">
-          {packages.map((pkg, index) => (
-            <PackageCard key={index} pkg={pkg} />
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-xs mx-auto mt-12"
+        >
+          <CarouselContent>
+            {packages.map((pkg, index) => (
+              <CarouselItem key={index}>
+                <div className="p-1">
+                  <PackageCard pkg={pkg} />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </section>
   );
