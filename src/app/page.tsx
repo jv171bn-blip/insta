@@ -1,4 +1,3 @@
-import Chatbot from "@/components/chatbot";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Cta from "@/components/sections/cta";
@@ -31,7 +30,6 @@ export default function Home() {
         <Cta />
       </main>
       <Footer />
-      <Chatbot />
     </div>
   );
 }
