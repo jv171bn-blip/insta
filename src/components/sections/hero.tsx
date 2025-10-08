@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, MessageSquareHeart } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Hero() {
@@ -44,6 +44,20 @@ export default function Hero() {
             <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
                 <span>Suporte 24h</span>
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-lg border-2 border-dashed border-accent/50 p-4 max-w-md mx-auto bg-card/50">
+            <div className="flex justify-center items-center gap-3">
+              <MessageSquareHeart className="h-8 w-8 text-accent" />
+              <div>
+                <p className="text-left font-semibold text-foreground">
+                  Realize sua compra pelo site
+                </p>
+                <p className="text-left text-sm text-muted-foreground">
+                  Ou chame nosso atendente 24h/7!
+                </p>
+              </div>
             </div>
           </div>
       </div>
