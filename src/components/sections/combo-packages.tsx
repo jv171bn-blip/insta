@@ -18,15 +18,16 @@ const comboPackagesData = [
 ];
 
 const packages = comboPackagesData.map(pkg => {
-    // To find the original follower package, we need to reverse the 50% increase.
-  const originalFollowerCount = pkg.followers / 1.5;
-
-  const followerPackage = followerPackagesData.find(fp => fp.followers === originalFollowerCount);
+  const followerCountForCombo = pkg.followers;
+  // There is not always a direct match. Find the closest follower package from the base packages.
+  const followerPackage = followerPackagesData.reduce((prev, curr) => {
+      // Each combo has 1.5x the followers of a base package.
+      // So to find the base package, we look for follower counts that are roughly pkg.followers / 1.5
+      return (Math.abs(curr.followers - (followerCountForCombo / 1.5)) < Math.abs(prev.followers - (followerCountForCombo / 1.5)) ? curr : prev);
+  });
   
   // The price in followerPackagesData is the *base* price for the original follower count.
-  const basePrice = followerPackage 
-    ? followerPackage.price
-    : (originalFollowerCount / 2250) * 9.90; // Fallback based on the smallest package ratio
+  const basePrice = followerPackage.price;
   
   // The full price of the combo is the base follower price + 15% for the likes
   const comboPrice = basePrice * 1.15; 

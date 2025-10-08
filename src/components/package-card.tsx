@@ -64,9 +64,9 @@ export default function PackageCard({ pkg }: Props) {
 
   useEffect(() => {
     // Client-side only effect to format numbers and prevent hydration mismatch
-    setFormattedFollowers(pkg.followers.toLocaleString());
+    setFormattedFollowers(pkg.followers.toLocaleString('pt-BR'));
     if (pkg.likes) {
-      setFormattedLikes(pkg.likes.toLocaleString());
+      setFormattedLikes(pkg.likes.toLocaleString('pt-BR'));
     }
   }, [pkg.followers, pkg.likes]);
 
@@ -149,8 +149,8 @@ export default function PackageCard({ pkg }: Props) {
               <div className="rounded-lg border p-4">
                 <p className="text-sm text-muted-foreground">Você está comprando</p>
                 <p className="text-2xl font-bold">
-                  {pkg.followers.toLocaleString()} Seguidores
-                  {pkg.likes && ` + ${pkg.likes.toLocaleString()} Curtidas`}
+                  {pkg.followers.toLocaleString('pt-BR')} Seguidores
+                  {pkg.likes && ` + ${pkg.likes.toLocaleString('pt-BR')} Curtidas`}
                 </p>
               </div>
               <div className="rounded-lg border p-4">
@@ -158,7 +158,7 @@ export default function PackageCard({ pkg }: Props) {
                 <p className="text-2xl font-bold text-primary">{username}</p>
               </div>
               <div className="text-center text-4xl font-bold text-accent">
-                R${Math.round(pkg.price)}
+                R${pkg.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </div>
             </div>
             <Button onClick={handleConfirm} className="w-full mt-4 bg-accent hover:bg-accent/90">
@@ -252,10 +252,10 @@ export default function PackageCard({ pkg }: Props) {
           <div className="flex justify-center items-baseline gap-2">
             {pkg.originalPrice && (
                 <span className="text-2xl font-medium text-muted-foreground line-through">
-                    R${Math.round(pkg.originalPrice)}
+                    R${pkg.originalPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                 </span>
             )}
-            <span className="text-4xl font-bold">R${Math.round(pkg.price)}</span>
+            <span className="text-4xl font-bold">R${pkg.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
             </div>
             <span className="text-muted-foreground">/pagamento único</span>
           </div>
