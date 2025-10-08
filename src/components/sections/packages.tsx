@@ -2,13 +2,8 @@ import PackageCard from "../package-card";
 
 const packagesData = [
   { followers: 1000, price: 9.99 },
-  { followers: 2000, price: 12.99 },
-  { followers: 3000, price: 13.99 },
-  { followers: 4000, price: 15.99 },
   { followers: 5000, price: 19.99, isPopular: true },
-  { followers: 7000, price: 24.99 },
   { followers: 10000, price: 29.99, isBestValue: true },
-  { followers: 15000, price: 34.99 },
   { followers: 20000, price: 39.99 },
   { followers: 30000, price: 59.99 },
   { followers: 50000, price: 79.99 },
