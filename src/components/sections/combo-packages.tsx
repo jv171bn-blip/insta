@@ -10,6 +10,7 @@ import { packagesData as followerPackagesData } from "./packages";
 
 const comboPackagesData = [
     { followers: 2250, likes: 750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 5000, likes: 1650, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
     { followers: 11250, likes: 3750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isPopular: true, },
     { followers: 22500, likes: 7500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isBestValue: true, },
     { followers: 45000, likes: 15000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
@@ -21,9 +22,8 @@ const packages = comboPackagesData.map(pkg => {
   const followerCountForCombo = pkg.followers;
   // There is not always a direct match. Find the closest follower package from the base packages.
   const followerPackage = followerPackagesData.reduce((prev, curr) => {
-      // Each combo has 1.5x the followers of a base package.
-      // So to find the base package, we look for follower counts that are roughly pkg.followers / 1.5
-      return (Math.abs(curr.followers - (followerCountForCombo / 1.5)) < Math.abs(prev.followers - (followerCountForCombo / 1.5)) ? curr : prev);
+      // Find the base package that is closest to the combo follower count
+      return (Math.abs(curr.followers - followerCountForCombo) < Math.abs(prev.followers - followerCountForCombo) ? curr : prev);
   });
   
   // The price in followerPackagesData is the *base* price for the original follower count.
