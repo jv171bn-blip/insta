@@ -17,6 +17,9 @@ import {
   Sparkles,
   User,
   CheckCircle,
+  Plus,
+  Heart,
+  Users,
 } from "lucide-react";
 import { Badge } from "./ui/badge";
 import {
@@ -31,6 +34,7 @@ import { cn } from "@/lib/utils";
 
 type Package = {
   followers: number;
+  likes?: number;
   price: number;
   originalPrice?: number;
   isPopular?: boolean;
@@ -51,11 +55,15 @@ export default function PackageCard({ pkg }: Props) {
   const [username, setUsername] = useState("");
   const [progress, setProgress] = useState(0);
   const [formattedFollowers, setFormattedFollowers] = useState<string | number>(pkg.followers);
+  const [formattedLikes, setFormattedLikes] = useState<string | number | undefined>(pkg.likes);
 
   useEffect(() => {
     // Client-side only effect to format numbers and prevent hydration mismatch
     setFormattedFollowers(pkg.followers.toLocaleString());
-  }, [pkg.followers]);
+    if (pkg.likes) {
+      setFormattedLikes(pkg.likes.toLocaleString());
+    }
+  }, [pkg.followers, pkg.likes]);
 
   useEffect(() => {
     if (step === "delivering") {
@@ -137,6 +145,7 @@ export default function PackageCard({ pkg }: Props) {
                 <p className="text-sm text-muted-foreground">Você está comprando</p>
                 <p className="text-2xl font-bold">
                   {pkg.followers.toLocaleString()} Seguidores
+                  {pkg.likes && ` + ${pkg.likes.toLocaleString()} Curtidas`}
                 </p>
               </div>
               <div className="rounded-lg border p-4">
@@ -164,7 +173,7 @@ export default function PackageCard({ pkg }: Props) {
         return (
           <div className="flex flex-col items-center justify-center h-48 gap-4">
             <Rocket className="h-12 w-12 text-primary" />
-            <p className="font-semibold text-lg">Entregando Seguidores!</p>
+            <p className="font-semibold text-lg">Entregando seu Combo!</p>
             <Progress value={progress} className="w-full" />
             <p className="text-sm text-muted-foreground">{progress}% completo</p>
           </div>
@@ -175,7 +184,7 @@ export default function PackageCard({ pkg }: Props) {
             <Sparkles className="h-12 w-12 text-amber-400" />
             <p className="font-semibold text-lg">Entrega Concluída!</p>
             <p className="text-sm text-muted-foreground">
-              Aproveite seus novos seguidores! Pode levar algumas horas para que todos os seguidores apareçam.
+              Aproveite seu novo público! Pode levar algumas horas para que todos os seguidores e curtidas apareçam.
             </p>
             <Button onClick={() => setIsOpen(false)} className="w-full mt-4">
               Concluído
@@ -209,12 +218,29 @@ export default function PackageCard({ pkg }: Props) {
           </Badge>
         )}
         <CardHeader className="items-center text-center pt-8">
-          <CardTitle className="text-5xl font-extrabold text-primary">
-            {formattedFollowers}
-          </CardTitle>
-          <CardDescription className="text-lg font-medium">
-            Seguidores
-          </CardDescription>
+            <div className="flex items-center justify-center gap-4">
+              <div className="text-center">
+                <CardTitle className="text-4xl font-extrabold text-primary">
+                  {formattedFollowers}
+                </CardTitle>
+                <CardDescription className="text-md font-medium flex items-center justify-center gap-1">
+                  <Users className="h-4 w-4"/> Seguidores
+                </CardDescription>
+              </div>
+              {formattedLikes && (
+                <>
+                    <Plus className="h-8 w-8 text-muted-foreground" />
+                    <div className="text-center">
+                        <CardTitle className="text-4xl font-extrabold text-primary">
+                        {formattedLikes}
+                        </CardTitle>
+                        <CardDescription className="text-md font-medium flex items-center justify-center gap-1">
+                        <Heart className="h-4 w-4"/> Curtidas
+                        </CardDescription>
+                    </div>
+                </>
+              )}
+            </div>
         </CardHeader>
         <CardContent className="flex-1 flex flex-col justify-between">
           <div className="text-center mb-6">
