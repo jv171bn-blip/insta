@@ -11,7 +11,6 @@ import {
 } from "./ui/card";
 import { Button } from "./ui/button";
 import {
-  Check,
   ChevronRight,
   Loader2,
   Rocket,
@@ -34,7 +33,6 @@ type Package = {
   price: number;
   isPopular?: boolean;
   isBestValue?: boolean;
-  features: string[];
 };
 
 type Props = {
@@ -208,14 +206,6 @@ export default function PackageCard({ pkg }: Props) {
             <span className="text-4xl font-bold">R${pkg.price.toString().replace('.', ',')}</span>
             <span className="text-muted-foreground">/pagamento único</span>
           </div>
-          <ul className="space-y-3 text-sm">
-            {pkg.features.map((feature, i) => (
-              <li key={i} className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-green-500" />
-                <span className="text-muted-foreground">{feature}</span>
-              </li>
-            ))}
-          </ul>
         </CardContent>
         <CardFooter>
           <Button
