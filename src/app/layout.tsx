@@ -5,8 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "InstaBoost - Boost Your Instagram Presence",
-  description: "Buy Instagram followers and boost your presence instantly.",
+  title: "InstaImpulso - Aumente sua Presença no Instagram",
+  description: "Compre seguidores para o Instagram e aumente sua presença instantaneamente.",
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="pt-BR" className="!scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

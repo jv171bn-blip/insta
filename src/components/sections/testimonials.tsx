@@ -15,27 +15,27 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Jessica P.",
+    name: "Jéssica P.",
     handle: "@jessfit",
-    text: "I was skeptical at first, but InstaBoost delivered! My engagement shot up, and it helped me land my first brand deal. So grateful!",
+    text: "Eu estava cética no início, mas o InstaImpulso entregou! Meu engajamento disparou e me ajudou a conseguir meu primeiro contrato com uma marca. Muito grata!",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-1"),
   },
   {
     name: "Mike R.",
     handle: "@mikerhots",
-    text: "As a small business owner, getting noticed on Instagram is tough. This service gave me the initial boost I needed to look credible. Sales have increased since!",
+    text: "Como dono de uma pequena empresa, ser notado no Instagram é difícil. Este serviço me deu o impulso inicial que eu precisava para parecer crível. As vendas aumentaram desde então!",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-2"),
   },
   {
     name: "Chloe T.",
     handle: "@travelchloe",
-    text: "The followers were delivered super fast, and they look real. My profile looks so much more professional now. Highly recommend this for any aspiring influencer.",
+    text: "Os seguidores foram entregues super rápido e parecem reais. Meu perfil parece muito mais profissional agora. Recomendo muito para qualquer aspirante a influenciador.",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-3"),
   },
     {
     name: "David L.",
     handle: "@davidleephotos",
-    text: "Simple, fast, and effective. It's the perfect way to kickstart your Instagram growth and gain that valuable social proof.",
+    text: "Simples, rápido e eficaz. É a maneira perfeita de impulsionar seu crescimento no Instagram e ganhar aquela valiosa prova social.",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-4"),
   },
 ];
@@ -46,10 +46,10 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-            Loved by Creators & Businesses
+            Amado por Criadores e Empresas
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Don't just take our word for it. Here's what our customers have to say.
+            Não acredite apenas na nossa palavra. Veja o que nossos clientes têm a dizer.
           </p>
         </div>
         <Carousel

@@ -9,18 +9,18 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start gap-2">
             <Logo />
             <p className="text-sm text-muted-foreground max-w-sm">
-              Boost your Instagram presence with our reliable and fast follower services.
+              Aumente sua presença no Instagram com nossos serviços de seguidores rápidos e confiáveis.
             </p>
           </div>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Copyright className="h-4 w-4" />
-            <span>{new Date().getFullYear()} InstaBoost. All rights reserved.</span>
+            <span>{new Date().getFullYear()} InstaImpulso. Todos os direitos reservados.</span>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t text-center text-xs text-muted-foreground">
           <p>
-            Disclaimer: InstaBoost is not affiliated with Instagram or Facebook.
-            All brand names and logos are the property of their respective owners.
+            Aviso Legal: O InstaImpulso não é afiliado ao Instagram ou ao Facebook.
+            Todos os nomes de marcas e logotipos são propriedade de seus respectivos donos.
           </p>
         </div>
       </div>

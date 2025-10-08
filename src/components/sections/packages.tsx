@@ -5,10 +5,10 @@ const packages = [
     followers: 500,
     price: 8.99,
     features: [
-      "High-Quality Followers",
-      "Instant Delivery",
-      "24/7 Support",
-      "No Password Required",
+      "Seguidores de Alta Qualidade",
+      "Entrega Instantânea",
+      "Suporte 24/7",
+      "Não é Necessário Senha",
     ],
   },
   {
@@ -16,11 +16,11 @@ const packages = [
     price: 14.99,
     isPopular: true,
     features: [
-      "High-Quality Followers",
-      "Instant Delivery",
-      "24/7 Support",
-      "No Password Required",
-      "30-Day Refill Guarantee",
+      "Seguidores de Alta Qualidade",
+      "Entrega Instantânea",
+      "Suporte 24/7",
+      "Não é Necessário Senha",
+      "Garantia de Recarga de 30 Dias",
     ],
   },
   {
@@ -28,24 +28,24 @@ const packages = [
     price: 49.99,
     isBestValue: true,
     features: [
-      "High-Quality Followers",
-      "Instant Delivery",
-      "24/7 Support",
-      "No Password Required",
-      "30-Day Refill Guarantee",
-      "Priority Support",
+      "Seguidores de Alta Qualidade",
+      "Entrega Instantânea",
+      "Suporte 24/7",
+      "Não é Necessário Senha",
+      "Garantia de Recarga de 30 Dias",
+      "Suporte Prioritário",
     ],
   },
   {
     followers: 10000,
     price: 89.99,
     features: [
-      "High-Quality Followers",
-      "Gradual Delivery Option",
-      "24/7 Support",
-      "No Password Required",
-      "30-Day Refill Guarantee",
-      "Priority Support",
+      "Seguidores de Alta Qualidade",
+      "Opção de Entrega Gradual",
+      "Suporte 24/7",
+      "Não é Necessário Senha",
+      "Garantia de Recarga de 30 Dias",
+      "Suporte Prioritário",
     ],
   },
 ];
@@ -56,10 +56,10 @@ export default function Packages() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-            Choose Your Boost
+            Escolha seu Impulso
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            We offer a variety of packages to fit your needs. All plans come with our satisfaction guarantee.
+            Oferecemos uma variedade de pacotes para atender às suas necessidades. Todos os planos vêm com nossa garantia de satisfação.
           </p>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">

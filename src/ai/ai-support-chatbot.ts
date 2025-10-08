@@ -13,12 +13,12 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
 const AskQuestionInputSchema = z.object({
-  question: z.string().describe('The user question.'),
+  question: z.string().describe('A pergunta do usuário.'),
 });
 export type AskQuestionInput = z.infer<typeof AskQuestionInputSchema>;
 
 const AskQuestionOutputSchema = z.object({
-  answer: z.string().describe('The answer to the user question.'),
+  answer: z.string().describe('A resposta para a pergunta do usuário.'),
 });
 export type AskQuestionOutput = z.infer<typeof AskQuestionOutputSchema>;
 
@@ -31,34 +31,34 @@ const faqsSchema = z.array(faqSchema);
 
 const getRelevantFaqs = ai.defineTool({
   name: 'getRelevantFaqs',
-  description: 'Retrieves relevant FAQs based on the user question.',
+  description: 'Recupera FAQs relevantes com base na pergunta do usuário.',
   inputSchema: z.object({
-    question: z.string().describe('The user question.'),
+    question: z.string().describe('A pergunta do usuário.'),
   }),
   outputSchema: faqsSchema,
 },
 async (input) => {
-    // Replace this with your actual FAQ retrieval logic
+    // Substitua isso pela sua lógica real de recuperação de FAQs
     const faqs = [
         {
-            "question": "How do I purchase followers?",
-            "answer": "You can purchase followers by selecting a package and completing the payment process."
+            "question": "Como eu compro seguidores?",
+            "answer": "Você pode comprar seguidores selecionando um pacote e concluindo o processo de pagamento."
         },
         {
-            "question": "Is the payment process secure?",
-            "answer": "Yes, we use secure payment gateways to ensure your transactions are safe."
+            "question": "O processo de pagamento é seguro?",
+            "answer": "Sim, usamos gateways de pagamento seguros para garantir que suas transações sejam seguras."
         },
         {
-            "question": "How long does it take to receive my followers?",
-            "answer": "Followers are typically added to your account immediately after payment."
+            "question": "Quanto tempo leva para receber meus seguidores?",
+            "answer": "Os seguidores são normalmente adicionados à sua conta imediatamente após o pagamento."
         },
         {
-            "question": "Can I track my order?",
-            "answer": "Yes, you can track the status of your order in real-time on our website."
+            "question": "Posso rastrear meu pedido?",
+            "answer": "Sim, você pode acompanhar o status do seu pedido em tempo real em nosso site."
         },
         {
-            "question": "What payment methods do you accept?",
-            "answer": "We accept major credit cards and PayPal."
+            "question": "Quais métodos de pagamento vocês aceitam?",
+            "answer": "Aceitamos os principais cartões de crédito e PayPal."
         }
     ];
 
@@ -79,9 +79,9 @@ const prompt = ai.definePrompt({
   input: {schema: AskQuestionInputSchema},
   output: {schema: AskQuestionOutputSchema},
   tools: [getRelevantFaqs],
-  prompt: `You are a customer support chatbot for InstaBoost, a service that sells Instagram followers.  Use the getRelevantFaqs tool to answer the user's question, and only answer based on the FAQs. If no FAQs are relevant, respond that you cannot answer the question.
+  prompt: `Você é um chatbot de suporte ao cliente para o InstaImpulso, um serviço que vende seguidores para o Instagram. Use a ferramenta getRelevantFaqs para responder à pergunta do usuário e responda apenas com base nas FAQs. Se nenhuma FAQ for relevante, responda que você não pode responder à pergunta.
 
-User question: {{{question}}}`,
+Pergunta do usuário: {{{question}}}`,
 });
 
 const askQuestionFlow = ai.defineFlow(

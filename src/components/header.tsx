@@ -9,7 +9,7 @@ export default function Header() {
         <Logo />
         <Button variant="outline">
           <PackageSearch className="mr-2 h-4 w-4" />
-          Track Order
+          Rastrear Pedido
         </Button>
       </div>
     </header>

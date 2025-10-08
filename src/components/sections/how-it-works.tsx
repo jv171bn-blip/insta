@@ -4,27 +4,27 @@ import { Handshake, PackageSearch, Rocket, VenetianMask } from "lucide-react";
 const steps = [
   {
     icon: <PackageSearch className="h-10 w-10 text-primary" />,
-    title: "Choose Your Package",
+    title: "Escolha Seu Pacote",
     description:
-      "Select the follower package that best fits your growth goals and budget.",
+      "Selecione o pacote de seguidores que melhor se adapta às suas metas de crescimento e orçamento.",
   },
   {
     icon: <VenetianMask className="h-10 w-10 text-primary" />,
-    title: "Provide Your Username",
+    title: "Forneça Seu Usuário",
     description:
-      "Enter your Instagram username. We never ask for your password.",
+      "Digite seu nome de usuário do Instagram. Nunca pedimos sua senha.",
   },
   {
     icon: <Handshake className="h-10 w-10 text-primary" />,
-    title: "Secure Payment",
+    title: "Pagamento Seguro",
     description:
-      "Complete your purchase through our 100% secure payment gateway.",
+      "Conclua sua compra através do nosso gateway de pagamento 100% seguro.",
   },
   {
     icon: <Rocket className="h-10 w-10 text-primary" />,
-    title: "Watch Your Growth",
+    title: "Veja Seu Crescimento",
     description:
-      "Followers are delivered instantly, boosting your profile in minutes!",
+      "Os seguidores são entregues instantaneamente, impulsionando seu perfil em minutos!",
   },
 ];
 
@@ -34,10 +34,10 @@ export default function HowItWorks() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-            Get Followers in 4 Simple Steps
+            Obtenha Seguidores em 4 Passos Simples
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Our process is designed to be fast, simple, and completely secure.
+            Nosso processo é projetado para ser rápido, simples e completamente seguro.
           </p>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">

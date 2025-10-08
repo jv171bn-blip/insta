@@ -95,15 +95,15 @@ export default function PackageCard({ pkg }: Props) {
         return (
           <>
             <DialogHeader>
-              <DialogTitle>Let's get started!</DialogTitle>
+              <DialogTitle>Vamos começar!</DialogTitle>
             </DialogHeader>
             <p className="text-sm text-muted-foreground">
-              Please enter your Instagram username. No password required.
+              Por favor, insira seu nome de usuário do Instagram. Não é necessário senha.
             </p>
             <div className="relative mt-2">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="@username"
+                placeholder="@usuário"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="pl-9"
@@ -114,7 +114,7 @@ export default function PackageCard({ pkg }: Props) {
               disabled={!username}
               className="w-full mt-4"
             >
-              Continue <ChevronRight className="ml-2 h-4 w-4" />
+              Continuar <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </>
         );
@@ -122,25 +122,25 @@ export default function PackageCard({ pkg }: Props) {
         return (
           <>
             <DialogHeader>
-              <DialogTitle>Confirm Your Order</DialogTitle>
+              <DialogTitle>Confirme seu Pedido</DialogTitle>
             </DialogHeader>
             <div className="space-y-4">
               <div className="rounded-lg border p-4">
-                <p className="text-sm text-muted-foreground">You are buying</p>
+                <p className="text-sm text-muted-foreground">Você está comprando</p>
                 <p className="text-2xl font-bold">
-                  {pkg.followers.toLocaleString()} Followers
+                  {pkg.followers.toLocaleString()} Seguidores
                 </p>
               </div>
               <div className="rounded-lg border p-4">
-                <p className="text-sm text-muted-foreground">For Instagram user</p>
+                <p className="text-sm text-muted-foreground">Para o usuário do Instagram</p>
                 <p className="text-2xl font-bold text-primary">{username}</p>
               </div>
               <div className="text-center text-4xl font-bold text-accent">
-                ${pkg.price}
+                R${pkg.price.toString().replace('.', ',')}
               </div>
             </div>
             <Button onClick={handleConfirm} className="w-full mt-4 bg-accent hover:bg-accent/90">
-              Confirm & Pay
+              Confirmar e Pagar
             </Button>
           </>
         );
@@ -148,29 +148,29 @@ export default function PackageCard({ pkg }: Props) {
         return (
           <div className="flex flex-col items-center justify-center h-48 gap-4">
             <Loader2 className="h-12 w-12 animate-spin text-primary" />
-            <p className="font-semibold text-lg">Processing your payment...</p>
-            <p className="text-sm text-muted-foreground">Please wait a moment.</p>
+            <p className="font-semibold text-lg">Processando seu pagamento...</p>
+            <p className="text-sm text-muted-foreground">Por favor, aguarde um momento.</p>
           </div>
         );
       case "delivering":
         return (
           <div className="flex flex-col items-center justify-center h-48 gap-4">
             <Rocket className="h-12 w-12 text-primary" />
-            <p className="font-semibold text-lg">Delivering Followers!</p>
+            <p className="font-semibold text-lg">Entregando Seguidores!</p>
             <Progress value={progress} className="w-full" />
-            <p className="text-sm text-muted-foreground">{progress}% complete</p>
+            <p className="text-sm text-muted-foreground">{progress}% completo</p>
           </div>
         );
       case "complete":
         return (
           <div className="flex flex-col items-center justify-center h-48 gap-4 text-center">
             <Sparkles className="h-12 w-12 text-amber-400" />
-            <p className="font-semibold text-lg">Delivery Complete!</p>
+            <p className="font-semibold text-lg">Entrega Concluída!</p>
             <p className="text-sm text-muted-foreground">
-              Enjoy your new followers! It may take a few hours for all followers to appear.
+              Aproveite seus novos seguidores! Pode levar algumas horas para que todos os seguidores apareçam.
             </p>
             <Button onClick={() => setIsOpen(false)} className="w-full mt-4">
-              Done
+              Concluído
             </Button>
           </div>
         );
@@ -187,12 +187,12 @@ export default function PackageCard({ pkg }: Props) {
       >
         {pkg.isPopular && (
           <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary">
-            Most Popular
+            Mais Popular
           </Badge>
         )}
          {pkg.isBestValue && (
           <Badge variant="secondary" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-white">
-            Best Value
+            Melhor Valor
           </Badge>
         )}
         <CardHeader className="items-center text-center pt-8">
@@ -200,13 +200,13 @@ export default function PackageCard({ pkg }: Props) {
             {pkg.followers.toLocaleString()}
           </CardTitle>
           <CardDescription className="text-lg font-medium">
-            Followers
+            Seguidores
           </CardDescription>
         </CardHeader>
         <CardContent className="flex-1">
           <div className="text-center mb-6">
-            <span className="text-4xl font-bold">${pkg.price}</span>
-            <span className="text-muted-foreground">/one-time</span>
+            <span className="text-4xl font-bold">R${pkg.price.toString().replace('.', ',')}</span>
+            <span className="text-muted-foreground">/pagamento único</span>
           </div>
           <ul className="space-y-3 text-sm">
             {pkg.features.map((feature, i) => (
@@ -223,7 +223,7 @@ export default function PackageCard({ pkg }: Props) {
             className="w-full"
             variant={pkg.isPopular ? "default" : "outline"}
           >
-            Buy Now
+            Comprar Agora
           </Button>
         </CardFooter>
       </Card>

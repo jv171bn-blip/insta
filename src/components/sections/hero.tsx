@@ -18,21 +18,21 @@ export default function Hero() {
         </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:pt-32 sm:pb-24 text-center relative">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight font-headline">
-          Boost Your Instagram{" "}
+          Aumente Sua Presença no Instagram{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-            Presence Instantly
+            Instantaneamente
           </span>
         </h1>
         <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Get real, high-quality Instagram followers delivered in minutes.
-          Elevate your social proof and unlock new growth opportunities today.
+          Obtenha seguidores reais e de alta qualidade no Instagram, entregues em minutos.
+          Eleve sua prova social e desbloqueie novas oportunidades de crescimento hoje.
         </p>
         <div className="mt-8 flex justify-center items-center gap-4 flex-wrap">
           <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={scrollToPackages}>
-            Get Started Now <ArrowRight className="ml-2 h-5 w-5" />
+            Comece Agora <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <Button variant="outline" size="lg" onClick={scrollToPackages}>
-            View Packages
+            Ver Pacotes
           </Button>
         </div>
         <div className="mt-8 flex justify-center items-center gap-2">
@@ -44,7 +44,7 @@ export default function Hero() {
             <Star className="h-5 w-5 fill-current" />
           </div>
           <p className="text-sm text-muted-foreground">
-            Rated 4.9/5 by 10,000+ happy customers
+            Avaliado como 4.9/5 por mais de 10.000 clientes satisfeitos
           </p>
         </div>
       </div>

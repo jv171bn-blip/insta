@@ -7,29 +7,29 @@ import {
 
 const faqs = [
   {
-    question: "Is it safe to buy Instagram followers?",
+    question: "É seguro comprar seguidores para o Instagram?",
     answer:
-      "Yes, it is completely safe. We use methods that are compliant with Instagram's policies. Your account will not be at risk. We never ask for your password.",
+      "Sim, é completamente seguro. Usamos métodos que estão em conformidade com as políticas do Instagram. Sua conta não estará em risco. Nunca pedimos sua senha.",
   },
   {
-    question: "How long does it take to receive the followers?",
+    question: "Quanto tempo leva para receber os seguidores?",
     answer:
-      "Follower delivery starts instantly after your payment is confirmed. For larger packages, we may drip-feed the followers over a short period to ensure natural growth.",
+      "A entrega de seguidores começa instantaneamente após a confirmação do seu pagamento. Para pacotes maiores, podemos distribuir os seguidores ao longo de um curto período para garantir um crescimento natural.",
   },
   {
-    question: "Will the followers be real people?",
+    question: "Os seguidores serão pessoas reais?",
     answer:
-      "We provide high-quality profiles to follow your account. While they are primarily for social proof, they look authentic and will not harm your account's reputation.",
+      "Nós fornecemos perfis de alta qualidade para seguir sua conta. Embora sejam principalmente para prova social, eles parecem autênticos e não prejudicarão a reputação da sua conta.",
   },
   {
-    question: "Will the followers disappear?",
+    question: "Os seguidores vão desaparecer?",
     answer:
-      "We provide a 30-day retention guarantee. If any of the followers you purchased unfollow you within this period, we will replace them free of charge.",
+      "Oferecemos uma garantia de retenção de 30 dias. Se algum dos seguidores que você comprou deixar de te seguir dentro deste período, nós os substituiremos gratuitamente.",
   },
   {
-    question: "What payment methods do you accept?",
+    question: "Quais métodos de pagamento vocês aceitam?",
     answer:
-      "We accept all major credit cards, PayPal, and various other secure payment methods. Our checkout process is fully encrypted for your security.",
+      "Aceitamos todos os principais cartões de crédito, PayPal e vários outros métodos de pagamento seguros. Nosso processo de checkout é totalmente criptografado para sua segurança.",
   },
 ];
 
@@ -39,10 +39,10 @@ export default function Faq() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-            Frequently Asked Questions
+            Perguntas Frequentes
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Have questions? We have answers. If you can't find what you're looking for, feel free to use our chat support.
+            Tem perguntas? Nós temos as respostas. Se você não encontrar o que procura, sinta-se à vontade para usar nosso chat de suporte.
           </p>
         </div>
         <div className="mt-12 max-w-3xl mx-auto">

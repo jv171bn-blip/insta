@@ -10,6 +10,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Input } from "./ui/input";
 import { useState } from "react";
+import { askQuestion } from "@/ai/ai-support-chatbot";
 
 type Message = {
   id: number;
@@ -21,18 +22,19 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hello! How can I help you boost your Instagram today?",
+      text: "Olá! Como posso ajudar a impulsionar seu Instagram hoje?",
       sender: "bot",
     },
     {
       id: 2,
-      text: "You can ask me about our packages, the delivery process, or payment methods.",
+      text: "Você pode me perguntar sobre nossos pacotes, o processo de entrega ou métodos de pagamento.",
       sender: "bot",
     },
   ]);
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (input.trim() === "") return;
 
     const userMessage: Message = {
@@ -43,16 +45,26 @@ export default function Chatbot() {
 
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
+    setIsLoading(true);
 
-    // Mock bot response
-    setTimeout(() => {
+    try {
+      const response = await askQuestion({ question: input });
       const botResponse: Message = {
         id: Date.now() + 1,
-        text: "Thanks for your question! One of our human agents will get back to you shortly. For now, check our FAQ section for common questions.",
+        text: response.answer,
         sender: "bot",
       };
       setMessages((prev) => [...prev, botResponse]);
-    }, 1500);
+    } catch (error) {
+      const errorResponse: Message = {
+        id: Date.now() + 1,
+        text: "Desculpe, não consegui processar sua pergunta. Tente novamente.",
+        sender: "bot",
+      };
+      setMessages((prev) => [...prev, errorResponse]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -61,7 +73,7 @@ export default function Chatbot() {
         <Button
           className="fixed bottom-4 right-4 h-16 w-16 rounded-full bg-accent shadow-lg hover:bg-accent/90"
           size="icon"
-          aria-label="Open support chat"
+          aria-label="Abrir chat de suporte"
         >
           <MessageSquare className="h-8 w-8 text-accent-foreground" />
         </Button>
@@ -75,13 +87,13 @@ export default function Chatbot() {
           <div className="flex items-center gap-3">
             <Avatar>
               <AvatarFallback className="bg-primary-foreground text-primary">
-                IB
+                II
               </AvatarFallback>
             </Avatar>
             <div>
-              <h3 className="font-bold text-primary-foreground">InstaBoost Support</h3>
+              <h3 className="font-bold text-primary-foreground">Suporte InstaImpulso</h3>
               <p className="text-xs text-primary-foreground/80">
-                We typically reply instantly
+                Normalmente respondemos instantaneamente
               </p>
             </div>
           </div>
@@ -101,7 +113,7 @@ export default function Chatbot() {
             >
               {message.sender === "bot" && (
                 <Avatar className="h-6 w-6">
-                  <AvatarFallback className="bg-primary text-primary-foreground text-xs">IB</AvatarFallback>
+                  <AvatarFallback className="bg-primary text-primary-foreground text-xs">II</AvatarFallback>
                 </Avatar>
               )}
               <div
@@ -115,6 +127,20 @@ export default function Chatbot() {
               </div>
             </div>
           ))}
+           {isLoading && (
+            <div className="flex items-end gap-2 justify-start">
+              <Avatar className="h-6 w-6">
+                <AvatarFallback className="bg-primary text-primary-foreground text-xs">II</AvatarFallback>
+              </Avatar>
+              <div className="max-w-[75%] rounded-2xl px-4 py-2 text-sm bg-muted text-muted-foreground rounded-bl-none">
+                <div className="flex items-center space-x-1">
+                    <span className="h-2 w-2 bg-muted-foreground rounded-full animate-pulse [animation-delay:-0.3s]"></span>
+                    <span className="h-2 w-2 bg-muted-foreground rounded-full animate-pulse [animation-delay:-0.15s]"></span>
+                    <span className="h-2 w-2 bg-muted-foreground rounded-full animate-pulse"></span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
         <div className="p-4 border-t">
           <form
@@ -127,13 +153,14 @@ export default function Chatbot() {
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Type your message..."
+              placeholder="Digite sua mensagem..."
               className="flex-1"
               autoComplete="off"
+              disabled={isLoading}
             />
-            <Button type="submit" size="icon" className="bg-accent hover:bg-accent/90 shrink-0">
+            <Button type="submit" size="icon" className="bg-accent hover:bg-accent/90 shrink-0" disabled={isLoading}>
               <Send className="h-4 w-4" />
-              <span className="sr-only">Send</span>
+              <span className="sr-only">Enviar</span>
             </Button>
           </form>
         </div>
