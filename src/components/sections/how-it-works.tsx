@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Handshake, PackageSearch, Rocket, VenetianMask } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const steps = [
   {
@@ -32,7 +33,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-muted/50 pb-16 pt-8">
+    <section id="how-it-works" className="bg-muted/50 pb-16 pt-12">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold tracking-tight">
@@ -42,19 +43,25 @@ export default function HowItWorks() {
             Nosso processo é projetado para ser rápido, simples e completamente seguro.
           </p>
         </div>
-        <div className="mt-12 grid gap-8 grid-cols-1">
+        <div className="mt-12 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
-            <Card key={index} className="text-center bg-card">
-              <CardHeader>
-                <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit">
-                    {step.icon}
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardTitle className="text-xl mb-2">{step.title}</CardTitle>
-                <p className="text-muted-foreground">{step.description}</p>
-              </CardContent>
-            </Card>
+            <div
+              key={index}
+              className="animate-step-in"
+              style={{ animationDelay: `${index * 200}ms`, opacity: 0, animationFillMode: 'forwards' }}
+            >
+              <Card className="text-center bg-card h-full">
+                <CardHeader>
+                  <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit">
+                      {step.icon}
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardTitle className="text-xl mb-2">{step.title}</CardTitle>
+                  <p className="text-muted-foreground">{step.description}</p>
+                </CardContent>
+              </Card>
+            </div>
           ))}
         </div>
       </div>
