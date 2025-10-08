@@ -10,6 +10,7 @@ import HowItWorks from "@/components/sections/how-it-works";
 import Packages from "@/components/sections/packages";
 import SocialProof from "@/components/sections/social-proof";
 import Testimonials from "@/components/sections/testimonials";
+import CustomPackages from "@/components/sections/custom-packages";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <HowItWorks />
         <Testimonials />
         <Faq />
+        <CustomPackages />
         <Cta />
       </main>
       <Footer />
