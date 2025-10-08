@@ -31,6 +31,7 @@ import { cn } from "@/lib/utils";
 type Package = {
   followers: number;
   price: number;
+  originalPrice?: number;
   isPopular?: boolean;
   isBestValue?: boolean;
 };
@@ -134,7 +135,7 @@ export default function PackageCard({ pkg }: Props) {
                 <p className="text-2xl font-bold text-primary">{username}</p>
               </div>
               <div className="text-center text-4xl font-bold text-accent">
-                R${pkg.price.toString().replace('.', ',')}
+                R${pkg.price.toFixed(2).replace('.', ',')}
               </div>
             </div>
             <Button onClick={handleConfirm} className="w-full mt-4 bg-accent hover:bg-accent/90">
@@ -203,7 +204,14 @@ export default function PackageCard({ pkg }: Props) {
         </CardHeader>
         <CardContent className="flex-1">
           <div className="text-center mb-6">
-            <span className="text-4xl font-bold">R${pkg.price.toString().replace('.', ',')}</span>
+          <div className="flex justify-center items-baseline gap-2">
+            {pkg.originalPrice && (
+                <span className="text-2xl font-medium text-muted-foreground line-through">
+                    R${pkg.originalPrice.toFixed(2).replace('.', ',')}
+                </span>
+            )}
+            <span className="text-4xl font-bold">R${pkg.price.toFixed(2).replace('.', ',')}</span>
+            </div>
             <span className="text-muted-foreground">/pagamento único</span>
           </div>
         </CardContent>

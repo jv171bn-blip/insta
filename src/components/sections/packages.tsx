@@ -1,6 +1,6 @@
 import PackageCard from "../package-card";
 
-const packages = [
+const packagesData = [
   { followers: 1000, price: 9.99 },
   { followers: 2000, price: 12.99 },
   { followers: 3000, price: 13.99 },
@@ -14,6 +14,13 @@ const packages = [
   { followers: 50000, price: 79.99 },
 ];
 
+const packages = packagesData.map(pkg => ({
+  ...pkg,
+  originalPrice: pkg.price,
+  price: pkg.price * 0.7,
+}));
+
+
 export default function Packages() {
   return (
     <section id="packages" className="py-16">
@@ -23,7 +30,7 @@ export default function Packages() {
             Escolha seu Impulso
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Oferecemos uma variedade de pacotes para atender às suas necessidades.
+            Aproveite nosso desconto de 30% por tempo limitado!
           </p>
         </div>
         <div className="mt-12 grid gap-8 grid-cols-1">
