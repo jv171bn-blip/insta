@@ -4,21 +4,29 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { packagesData as followerPackagesData } from "./packages";
 
-const packagesData = [
-    { followers: 1000, likes: 500, price: 9.99, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
-    { followers: 5000, likes: 2500, price: 19.99, isPopular: true, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 10000, likes: 5000, price: 34.99, isBestValue: true, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 20000, likes: 10000, price: 59.99, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
-    { followers: 30000, likes: 15000, price: 79.99, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
-    { followers: 50000, likes: 25000, price: 99.99, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+const comboPackagesData = [
+    { followers: 1000, likes: 500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 5000, likes: 2500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isPopular: true, },
+    { followers: 10000, likes: 5000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isBestValue: true, },
+    { followers: 20000, likes: 10000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 30000, likes: 15000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 50000, likes: 25000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
 ];
 
-const packages = packagesData.map(pkg => ({
-  ...pkg,
-  originalPrice: pkg.price / 0.7, // Keep the original price calculation based on the new price
-  price: pkg.price,
-}));
+const packages = comboPackagesData.map(pkg => {
+  const followerPackage = followerPackagesData.find(fp => fp.followers === pkg.followers);
+  const basePrice = followerPackage ? followerPackage.price : pkg.followers / 100; // Fallback price
+  const comboPrice = basePrice * 1.35;
+  const finalPrice = comboPrice * 0.7; // Applying 30% discount
+
+  return {
+    ...pkg,
+    originalPrice: comboPrice,
+    price: finalPrice,
+  }
+});
 
 
 export default function ComboPackages() {
