@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/carousel";
 
 export const packagesData = [
-    { followers: 2250, price: 9.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 2250, price: 9.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
     { followers: 5000, price: 19.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
     { followers: 11250, price: 34.90, isPopular: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
     { followers: 22500, price: 59.90, isBestValue: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
@@ -20,10 +20,14 @@ export const packagesData = [
 ];
 
 const packages = packagesData.map(pkg => {
-  return {
-    ...pkg,
-    price: Math.round(pkg.price)
-  };
+  if (pkg.isDiscount) {
+    return {
+      ...pkg,
+      originalPrice: pkg.price,
+      price: pkg.price * 0.7,
+    };
+  }
+  return pkg;
 });
 
 
@@ -48,15 +52,15 @@ export default function Packages() {
         >
           <CarouselContent className="-ml-4 py-4">
             {packages.map((pkg, index) => (
-              <CarouselItem key={index} className="pl-4 basis-3/4">
+              <CarouselItem key={index} className="pl-4 basis-3/4 md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <PackageCard pkg={pkg} />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden lg:flex" />
+          <CarouselNext className="hidden lg:flex" />
         </Carousel>
       </div>
     </section>

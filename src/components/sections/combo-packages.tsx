@@ -12,7 +12,7 @@ import { packagesData as followerPackagesData } from "./packages";
 
 const comboPackagesData = [
     { followers: 2250, likes: 750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 5000, likes: 1650, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 5000, likes: 1650, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
     { followers: 11250, likes: 3750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isPopular: true },
     { followers: 22500, likes: 7500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isBestValue: true },
     { followers: 45000, likes: 15000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
@@ -33,8 +33,8 @@ const packages = comboPackagesData.map(pkg => {
   
     return {
       ...pkg,
-      price: Math.round(finalPrice),
-      originalPrice: Math.round(comboPrice),
+      price: finalPrice,
+      originalPrice: comboPrice,
       isDiscount: true,
     }
 });
@@ -58,15 +58,15 @@ export default function ComboPackages() {
         >
           <CarouselContent className="-ml-4 py-4">
             {packages.map((pkg, index) => (
-              <CarouselItem key={index} className="pl-4 basis-3/4">
+              <CarouselItem key={index} className="pl-4 basis-3/4 md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <PackageCard pkg={pkg} />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden lg:flex" />
+          <CarouselNext className="hidden lg:flex" />
         </Carousel>
       </div>
     </section>
