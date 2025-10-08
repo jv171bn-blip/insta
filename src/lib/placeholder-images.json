@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "testimonial-1",
+      "description": "A happy female customer for testimonials",
+      "imageUrl": "https://picsum.photos/seed/t1/100/100",
+      "imageHint": "portrait woman"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "A happy male customer for testimonials",
+      "imageUrl": "https://picsum.photos/seed/t2/100/100",
+      "imageHint": "portrait man"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "A happy female influencer for testimonials",
+      "imageUrl": "https://picsum.photos/seed/t3/100/100",
+      "imageHint": "portrait person smiling"
+    },
+    {
+      "id": "testimonial-4",
+      "description": "A happy male photographer for testimonials",
+      "imageUrl": "https://picsum.photos/seed/t4/100/100",
+      "imageHint": "person smiling"
+    }
+  ]
 }
