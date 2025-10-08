@@ -10,22 +10,19 @@ import {
 } from "@/components/ui/carousel";
 
 export const packagesData = [
-    { followers: 2250, price: 9.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 2250, price: 9.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
     { followers: 5000, price: 19.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
     { followers: 11250, price: 34.90, isPopular: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
     { followers: 22500, price: 59.90, isBestValue: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 45000, price: 99.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
-    { followers: 67500, price: 129.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
-    { followers: 112500, price: 199.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 45000, price: 99.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 67500, price: 129.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 112500, price: 199.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
 ];
 
 const packages = packagesData.map(pkg => {
-  const finalPrice = pkg.price * 0.7; // Always apply 30% discount
   return {
     ...pkg,
-    originalPrice: Math.round(pkg.price),
-    price: Math.round(finalPrice),
-    isDiscount: true, // Always show the discount badge
+    price: Math.round(pkg.price)
   };
 });
 
@@ -39,7 +36,7 @@ export default function Packages() {
             🎯 Escolha seu Pacote de Seguidores
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Desconto de 30% para novos clientes do InstaTurbo
+            Planos para todos os perfis e orçamentos
           </p>
         </div>
         <Carousel
