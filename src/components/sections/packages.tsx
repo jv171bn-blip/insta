@@ -20,11 +20,14 @@ export const packagesData = [
 ];
 
 const packages = packagesData.map(pkg => {
-  if (pkg.isDiscount) {
+  const discountRate = pkg.followers >= 11250 ? 0.65 : 0.7; // 35% for >=11.25k, 30% for others
+
+  if (pkg.isDiscount || pkg.followers >= 11250) {
     return {
       ...pkg,
       originalPrice: pkg.price,
-      price: pkg.price * 0.7,
+      price: pkg.price * discountRate,
+      isDiscount: true, // Ensure badge is shown
     };
   }
   return pkg;
