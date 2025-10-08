@@ -1,12 +1,12 @@
 import PackageCard from "../package-card";
 
 const packagesData = [
-  { followers: 1000, price: 9.99 },
-  { followers: 5000, price: 19.99, isPopular: true },
-  { followers: 10000, price: 29.99, isBestValue: true },
-  { followers: 20000, price: 39.99 },
-  { followers: 30000, price: 59.99 },
-  { followers: 50000, price: 79.99 },
+    { followers: 1000, price: 9.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 5000, price: 19.99, isPopular: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 10000, price: 29.99, isBestValue: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 20000, price: 39.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 30000, price: 59.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 50000, price: 79.99, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
 ];
 
 const packages = packagesData.map(pkg => ({

@@ -16,6 +16,7 @@ import {
   Rocket,
   Sparkles,
   User,
+  CheckCircle,
 } from "lucide-react";
 import { Badge } from "./ui/badge";
 import {
@@ -34,6 +35,7 @@ type Package = {
   originalPrice?: number;
   isPopular?: boolean;
   isBestValue?: boolean;
+  features: string[];
 };
 
 type Props = {
@@ -202,7 +204,7 @@ export default function PackageCard({ pkg }: Props) {
             Seguidores
           </CardDescription>
         </CardHeader>
-        <CardContent className="flex-1">
+        <CardContent className="flex-1 flex flex-col justify-between">
           <div className="text-center mb-6">
           <div className="flex justify-center items-baseline gap-2">
             {pkg.originalPrice && (
@@ -214,8 +216,16 @@ export default function PackageCard({ pkg }: Props) {
             </div>
             <span className="text-muted-foreground">/pagamento único</span>
           </div>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+              {pkg.features.map((feature, i) => (
+                <li key={i} className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
         </CardContent>
-        <CardFooter>
+        <CardFooter className="pt-6">
           <Button
             onClick={() => setIsOpen(true)}
             className="w-full"

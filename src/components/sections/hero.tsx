@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 export default function Hero() {
   const scrollToPackages = () => {
@@ -20,19 +20,30 @@ export default function Hero() {
         <h1 className="text-4xl font-extrabold tracking-tight font-headline">
           Aumente Sua Presença no Instagram{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-            Instantaneamente
+            Hoje Mesmo
           </span>
         </h1>
         <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Obtenha seguidores de alta qualidade, entregues em minutos.
+          Obtenha seguidores brasileiros de alta qualidade, entregues em minutos e com segurança total.
         </p>
         <div className="mt-8 flex flex-col justify-center items-center gap-4">
           <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full" onClick={scrollToPackages}>
-            Comece Agora <ArrowRight className="ml-2 h-5 w-5" />
+            Quero Crescer Agora <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-          <Button variant="outline" size="lg" onClick={scrollToPackages} className="w-full">
-            Ver Pacotes
-          </Button>
+          <div className="mt-4 flex flex-col items-start gap-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span>+10.000 clientes satisfeitos</span>
+            </div>
+            <div className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span>Entrega rápida e segura</span>
+            </div>
+            <div className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span>Suporte 24h</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
