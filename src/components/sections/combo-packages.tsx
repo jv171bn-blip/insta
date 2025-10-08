@@ -18,13 +18,11 @@ const comboPackagesData = [
 ];
 
 const packages = comboPackagesData.map(pkg => {
-  // To find the original follower package, we need to reverse the 50% increase.
+    // To find the original follower package, we need to reverse the 50% increase.
   const originalFollowerCount = pkg.followers / 1.5;
+
+  const followerPackage = followerPackagesData.find(fp => fp.followers === originalFollowerCount);
   
-  // Find the corresponding follower package from the original data.
-  const followerPackage = followerPackagesData.find(fp => fp.followers / 1.5 === originalFollowerCount);
-  
-  // If a matching package is found, use its price. Otherwise, calculate a fallback.
   // The price in followerPackagesData is the *base* price for the original follower count.
   const basePrice = followerPackage 
     ? followerPackage.price

@@ -18,8 +18,8 @@ export const packagesData = [
 
 const packages = packagesData.map(pkg => ({
   ...pkg,
-  originalPrice: Math.round(pkg.price),
-  price: Math.round(pkg.price * 0.7),
+  originalPrice: pkg.price,
+  price: pkg.price * 0.7,
 }));
 
 
@@ -51,8 +51,8 @@ export default function Packages() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden lg:flex" />
-          <CarouselNext className="hidden lg:flex" />
+          <CarouselPrevious />
+          <CarouselNext />
         </Carousel>
       </div>
     </section>
