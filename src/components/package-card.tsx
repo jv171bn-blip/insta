@@ -49,6 +49,12 @@ export default function PackageCard({ pkg }: Props) {
   const [step, setStep] = useState<Step>("username");
   const [username, setUsername] = useState("");
   const [progress, setProgress] = useState(0);
+  const [formattedFollowers, setFormattedFollowers] = useState<string | number>(pkg.followers);
+
+  useEffect(() => {
+    // Client-side only effect to format numbers and prevent hydration mismatch
+    setFormattedFollowers(pkg.followers.toLocaleString());
+  }, [pkg.followers]);
 
   useEffect(() => {
     if (step === "delivering") {
@@ -198,7 +204,7 @@ export default function PackageCard({ pkg }: Props) {
         )}
         <CardHeader className="items-center text-center pt-8">
           <CardTitle className="text-5xl font-extrabold text-primary">
-            {pkg.followers.toLocaleString()}
+            {formattedFollowers}
           </CardTitle>
           <CardDescription className="text-lg font-medium">
             Seguidores
