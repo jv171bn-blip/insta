@@ -16,7 +16,7 @@ export default function Cta() {
           Pronto para Viralizar?
         </h2>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
-          Não espere para aumentar seu público. Junte-se a milhares de criadores, influenciadores e empresas que impulsionaram seu Instagram com o Insta Turbo.
+          Não espere para aumentar seu público. Junte-se a milhares de criadores, influenciadores e empresas que impulsionaram seu Instagram com o InstaTurbo.
         </p>
         <Button
           onClick={scrollToPackages}

@@ -91,7 +91,7 @@ export default function Chatbot() {
               </AvatarFallback>
             </Avatar>
             <div>
-              <h3 className="font-bold text-primary-foreground">Suporte Insta Turbo</h3>
+              <h3 className="font-bold text-primary-foreground">Suporte InstaTurbo</h3>
               <p className="text-xs text-primary-foreground/80">
                 Normalmente respondemos instantaneamente
               </p>
