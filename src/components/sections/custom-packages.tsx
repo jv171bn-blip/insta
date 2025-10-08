@@ -5,15 +5,14 @@ import { Button } from "../ui/button";
 const WhatsAppIcon = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-10 w-10 text-white"
+      width="24"
+      height="24"
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fill="currentColor"
+      className="h-10 w-10"
     >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        <path d="M16.75 13.96c.25.13.41.2.52.28.1.07.16.15.22.24.06.09.1.2.1.33A1 1 0 0 1 17 16a2.93 2.93 0 0 1-2.12-.88c-.78-.54-1.38-1.2-1.8-1.92-.44-.73-.66-1.5-.66-2.32 0-.2.02-.38.07-.56.05-.2.12-.38.2-.54l.1-.2a.5.5 0 0 1 .6-.23c.2.07.36.14.48.2.14.07.24.16.3.28a.5.5 0 0 1 .09.3c0 .07-.02.15-.05.24-.03.09-.08.2-.14.33-.06.13-.1.24-.13.33-.03.1-.01.2.05.3.06.1.15.2.26.33.1.14.22.27.35.4.13.14.25.27.38.4.12.13.23.23.3.3.08.08.12.12.13.13.04.03.07.03.08.02.02 0 .04-.02.06-.05.02-.03.05-.07.08-.12s.05-.1.05-.12a.5.5 0 0 1 .14-.42c.1-.1.22-.18.35-.25.13-.08.28-.13.44-.15h.2c.15 0 .28.03.4.1Z"></path>
+        <path d="M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10c.78 0 1.54-.09 2.28-.27l3.92 1.22-1.29-3.77A9.9 9.9 0 0 0 22 12a10 10 0 0 0-10-10Zm0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8Z"></path>
     </svg>
   );
 
@@ -21,17 +20,17 @@ export default function CustomPackages() {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <div className="rounded-lg bg-green-500 p-6 text-white shadow-lg text-center">
+        <div className="rounded-lg bg-primary p-6 text-primary-foreground shadow-lg text-center">
             <div className="flex justify-center items-center gap-4 mb-4">
                 <WhatsAppIcon />
                 <h3 className="text-3xl font-extrabold">Pacotes Personalizados? 🤔</h3>
             </div>
-            <p className="max-w-2xl mx-auto text-lg text-green-100">
+            <p className="max-w-2xl mx-auto text-lg text-primary-foreground/80">
                 Caso queira pacotes personalizados, favor entrar em contato via Whatsapp que um dos nossos atendentes irá falar com você.
             </p>
             <Button 
                 size="lg"
-                className="mt-6 bg-white text-green-600 hover:bg-white/90 font-bold"
+                className="mt-6 bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold"
                 onClick={() => window.open('https://wa.me/', '_blank')}
             >
                 Falar com Atendente
