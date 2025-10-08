@@ -4,6 +4,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -46,6 +48,18 @@ const testimonials = [
     handle: "@bmdesign",
     text: "Excelente suporte ao cliente e um serviço que realmente funciona. Consegui a prova social que precisava para o meu portfólio de design. Definitivamente usarei novamente.",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-6"),
+  },
+  {
+    name: "Lucas G.",
+    handle: "@lucasgamer",
+    text: "Em um nicho competitivo como o de games, cada seguidor conta. O InstaTurbo me ajudou a construir uma base sólida para começar. Totalmente recomendado!",
+    image: PlaceHolderImages.find((img) => img.id === "testimonial-7"),
+  },
+  {
+    name: "Mariana S.",
+    handle: "@maristyle",
+    text: "Fantástico! O aumento no número de seguidores me deu a credibilidade necessária para colaborar com outras marcas de moda. O serviço é seguro e eficiente.",
+    image: PlaceHolderImages.find((img) => img.id === "testimonial-8"),
   },
 ];
 
@@ -106,6 +120,8 @@ export default function Testimonials() {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <CarouselPrevious className="hidden lg:flex" />
+          <CarouselNext className="hidden lg:flex" />
         </Carousel>
       </div>
     </section>
