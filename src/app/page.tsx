@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Cta from "@/components/sections/cta";
@@ -12,16 +11,14 @@ import SocialProof from "@/components/sections/social-proof";
 import Testimonials from "@/components/sections/testimonials";
 
 export default function Home() {
-  const [showHowItWorks, setShowHowItWorks] = useState(false);
-
   return (
     <div className="flex min-h-screen flex-col bg-background overflow-x-hidden">
       <Header />
       <main className="flex-1">
-        <Hero onShowHowItWorks={() => setShowHowItWorks(true)} />
+        <Hero />
         <Packages />
         <SocialProof />
-        {showHowItWorks && <HowItWorks />}
+        <HowItWorks />
         <Testimonials />
         <Faq />
         <Cta />

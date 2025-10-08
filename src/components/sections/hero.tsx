@@ -1,10 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowDown, ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export default function Hero({ onShowHowItWorks }: { onShowHowItWorks: () => void }) {
+export default function Hero() {
   const scrollToPackages = () => {
     document.getElementById("packages")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -30,9 +30,6 @@ export default function Hero({ onShowHowItWorks }: { onShowHowItWorks: () => voi
         <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
           <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto" onClick={scrollToPackages}>
             Quero Crescer Agora <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto" onClick={onShowHowItWorks}>
-            Como Funciona? <ArrowDown className="ml-2 h-5 w-5" />
           </Button>
         </div>
          <div className="mt-8 flex justify-center items-center gap-2 text-sm text-muted-foreground sm:gap-6 flex-wrap">
