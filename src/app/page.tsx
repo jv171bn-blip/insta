@@ -3,6 +3,7 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Cta from "@/components/sections/cta";
+import ComboPackages from "@/components/sections/combo-packages";
 import Faq from "@/components/sections/faq";
 import Hero from "@/components/sections/hero";
 import HowItWorks from "@/components/sections/how-it-works";
@@ -17,6 +18,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Packages />
+        <ComboPackages />
         <SocialProof />
         <HowItWorks />
         <Testimonials />
