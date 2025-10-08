@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/lib/config";
 import { Button } from "../ui/button";
 
 const WhatsAppIcon = () => (
@@ -31,7 +32,7 @@ export default function CustomPackages() {
             <Button 
                 size="lg"
                 className="mt-6 bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold"
-                onClick={() => window.open('https://wa.me/', '_blank')}
+                onClick={() => window.open(siteConfig.whatsappLink, '_blank')}
             >
                 Falar com Atendente
             </Button>

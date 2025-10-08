@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/config";
+import Link from "next/link";
 
 const WhatsAppIcon = () => (
     <svg
@@ -62,7 +64,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="mt-8 rounded-lg p-4 max-w-md mx-auto bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg border border-green-700">
+          <Link href={siteConfig.whatsappLink} target="_blank" className="mt-8 rounded-lg p-4 max-w-md mx-auto bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg border border-green-700 block hover:scale-105 transition-transform">
             <div className="flex justify-center items-center gap-4">
               <div className="flex-shrink-0">
                 <WhatsAppIcon />
@@ -76,7 +78,7 @@ export default function Hero() {
                 </p>
               </div>
             </div>
-          </div>
+          </Link>
       </div>
     </section>
   );
