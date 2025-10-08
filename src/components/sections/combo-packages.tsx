@@ -27,7 +27,7 @@ export default function ComboPackages() {
       <div className="container mx-auto px-0 pt-4">
         <div className="text-center px-4">
           <h2 className="text-3xl font-extrabold tracking-tight">
-            Nossos Combos: Seguidores + Curtidas
+            PROMOÇÕES DO MÊS
           </h2>
         </div>
         <Carousel
