@@ -3,8 +3,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 const packagesData = [
@@ -26,8 +24,8 @@ const packages = packagesData.map(pkg => ({
 export default function Packages() {
   return (
     <section id="packages" className="py-16">
-      <div className="container mx-auto px-4">
-        <div className="text-center">
+      <div className="container mx-auto px-0">
+        <div className="text-center px-4">
           <h2 className="text-3xl font-extrabold tracking-tight">
             Escolha seu Pacote
           </h2>
@@ -37,22 +35,20 @@ export default function Packages() {
         </div>
         <Carousel
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
           }}
-          className="w-full max-w-xs mx-auto mt-12"
+          className="w-full mt-12"
         >
-          <CarouselContent>
+          <CarouselContent className="-ml-4">
             {packages.map((pkg, index) => (
-              <CarouselItem key={index}>
+              <CarouselItem key={index} className="pl-4 basis-3/4">
                 <div className="p-1">
                   <PackageCard pkg={pkg} />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
         </Carousel>
       </div>
     </section>
