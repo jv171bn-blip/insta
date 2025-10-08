@@ -20,11 +20,11 @@ export default function Home() {
         <Hero />
         <Packages />
         <ComboPackages />
+        <CustomPackages />
         <SocialProof />
         <HowItWorks />
         <Testimonials />
         <Faq />
-        <CustomPackages />
         <Cta />
       </main>
       <Footer />

@@ -17,9 +17,9 @@ const WhatsAppIcon = () => (
 
 export default function CustomPackages() {
   return (
-    <section className="pb-16">
+    <section className="py-16">
       <div className="container mx-auto px-4">
-        <div className="rounded-lg bg-green-500 p-8 text-white shadow-lg text-center">
+        <div className="rounded-lg bg-green-500 p-6 text-white shadow-lg text-center">
             <div className="flex justify-center items-center gap-4 mb-4">
                 <WhatsAppIcon />
                 <h3 className="text-3xl font-extrabold">Pacotes Personalizados? 🤔</h3>
