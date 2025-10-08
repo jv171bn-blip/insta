@@ -24,7 +24,7 @@ const packages = packagesData.map(pkg => ({
 export default function Packages() {
   return (
     <section id="packages" className="py-16">
-      <div className="container mx-auto px-0">
+      <div className="container mx-auto px-0 overflow-x-hidden">
         <div className="text-center px-4">
           <h2 className="text-3xl font-extrabold tracking-tight">
             Escolha seu Pacote
