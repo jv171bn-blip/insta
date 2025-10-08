@@ -1,3 +1,5 @@
+"use client";
+
 import PackageCard from "../package-card";
 import {
   Carousel,
@@ -18,15 +20,12 @@ export const packagesData = [
 ];
 
 const packages = packagesData.map(pkg => {
-  if (!pkg.isDiscount && !pkg.isPopular && !pkg.isBestValue) {
-      return { ...pkg };
-  }
-
-  const finalPrice = pkg.price * 0.7;
+  const finalPrice = pkg.price * 0.7; // Always apply 30% discount
   return {
     ...pkg,
-    originalPrice: pkg.price,
-    price: finalPrice,
+    originalPrice: Math.round(pkg.price),
+    price: Math.round(finalPrice),
+    isDiscount: true, // Always show the discount badge
   };
 });
 

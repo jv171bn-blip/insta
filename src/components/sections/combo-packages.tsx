@@ -1,3 +1,5 @@
+"use client";
+
 import PackageCard from "../package-card";
 import {
   Carousel,
@@ -19,28 +21,27 @@ const comboPackagesData = [
 ];
 
 const packages = comboPackagesData.map(pkg => {
-  const followerCountForCombo = pkg.followers;
-  // There is not always a direct match. Find the closest follower package from the base packages.
-  const followerPackage = followerPackagesData.reduce((prev, curr) => {
-      // Find the base package that is closest to the combo follower count
-      return (Math.abs(curr.followers - followerCountForCombo) < Math.abs(prev.followers - followerCountForCombo) ? curr : prev);
+    const followerPackage = followerPackagesData.find(fp => fp.followers === pkg.followers);
+    
+    if (!followerPackage) {
+        // Fallback or error handling if no matching follower package is found
+        return {
+            ...pkg,
+            price: 0,
+            originalPrice: 0,
+        };
+    }
+    
+    const basePrice = followerPackage.price;
+    const finalPrice = basePrice * 1.15; // Add 15% for likes
+  
+    return {
+      ...pkg,
+      price: Math.round(finalPrice),
+      originalPrice: undefined, // No "from" price for combos anymore
+      isDiscount: false, // No 30% discount badge
+    }
   });
-  
-  // The price in followerPackagesData is the *base* price for the original follower count.
-  const basePrice = followerPackage.price;
-  
-  // The full price of the combo is the base follower price + 15% for the likes
-  const comboPrice = basePrice * 1.15; 
-  
-  // Apply the 30% discount on top of the combo price
-  const finalPrice = comboPrice * 0.7; 
-
-  return {
-    ...pkg,
-    originalPrice: comboPrice, // Show the calculated full combo price as the "from" price
-    price: finalPrice, // Show the final discounted price
-  }
-});
 
 
 export default function ComboPackages() {
