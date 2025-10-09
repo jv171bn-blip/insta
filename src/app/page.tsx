@@ -18,8 +18,8 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <Packages />
         <ComboPackages />
+        <Packages />
         <CustomPackages />
         <SocialProof />
         <HowItWorks />
