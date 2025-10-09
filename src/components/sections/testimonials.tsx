@@ -16,7 +16,7 @@ const testimonials = [
   {
     name: "Jéssica P.",
     handle: "@jessfit",
-    text: "Eu estava cética no início, mas o InstaTurbo entregou! Meu engajamento disparou e me ajudou a conseguir meu primeiro contrato com uma marca. Muito grata!",
+    text: "Eu estava cética no início, mas o InstaBoost entregou! Meu engajamento disparou e me ajudou a conseguir meu primeiro contrato com uma marca. Muito grata!",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-1"),
   },
   {
@@ -52,7 +52,7 @@ const testimonials = [
   {
     name: "Lucas G.",
     handle: "@lucasgamer",
-    text: "Em um nicho competitivo como o de games, cada seguidor conta. O InstaTurbo me ajudou a construir uma base sólida para começar. Totalmente recomendado!",
+    text: "Em um nicho competitivo como o de games, cada seguidor conta. O InstaBoost me ajudou a construir uma base sólida para começar. Totalmente recomendado!",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-7"),
   },
   {
