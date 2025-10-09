@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
@@ -26,6 +26,7 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden">
+        <Rocket className="absolute -left-16 -top-16 h-72 w-72 text-primary/10 -z-10 animate-rocket-float" />
         <div 
             aria-hidden="true" 
             className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20">

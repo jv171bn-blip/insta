@@ -82,4 +82,20 @@
   .animate-step-in {
     animation: step-in 0.5s ease-out;
   }
+
+  @keyframes rocket-float {
+    0% {
+      transform: translateY(0) translateX(0) rotate(-45deg);
+    }
+    50% {
+      transform: translateY(-40px) translateX(20px) rotate(-45deg);
+    }
+    100% {
+      transform: translateY(0) translateX(0) rotate(-45deg);
+    }
+  }
+
+  .animate-rocket-float {
+    animation: rocket-float 8s ease-in-out infinite;
+  }
 }
