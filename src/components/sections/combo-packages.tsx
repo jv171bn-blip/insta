@@ -29,7 +29,7 @@ const packages = comboPackagesData.map(pkg => {
     
     const basePrice = followerPackage.price;
     const comboPrice = basePrice * 1.15; // Add 15% for likes
-    const finalPrice = comboPrice * 0.7; // Apply 30% discount
+    const finalPrice = comboPrice * 0.5; // Apply 50% discount
   
     return {
       ...pkg,
