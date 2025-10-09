@@ -215,11 +215,11 @@ export default function PackageCard({ pkg }: Props) {
           <Badge variant="secondary" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-white">
             Melhor Valor
           </Badge>
-        ) : pkg.isDiscount && (
+        ) : pkg.isDiscount ? (
           <Badge variant="destructive" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white border-green-600">
-            30% OFF
+            50% OFF
           </Badge>
-        )}
+        ) : null}
         <CardHeader className="items-center text-center pt-8">
             <div className="flex items-center justify-center gap-4">
               <div className="text-center">

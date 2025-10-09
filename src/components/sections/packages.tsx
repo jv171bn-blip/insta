@@ -10,8 +10,8 @@ import {
 } from "@/components/ui/carousel";
 
 export const packagesData = [
-    { followers: 2250, price: 9.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
-    { followers: 5000, price: 19.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isDiscount: true },
+    { followers: 2250, price: 9.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 5000, price: 19.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
     { followers: 11250, price: 34.90, isPopular: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
     { followers: 22500, price: 59.90, isBestValue: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
     { followers: 45000, price: 99.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
@@ -22,15 +22,11 @@ export const packagesData = [
 const packages = packagesData.map(pkg => {
   const discountRate = pkg.followers >= 11250 ? 0.65 : 0.7; // 35% for >=11.25k, 30% for others
 
-  if (pkg.isDiscount || pkg.followers >= 11250) {
-    return {
-      ...pkg,
-      originalPrice: pkg.price,
-      price: pkg.price * discountRate,
-      isDiscount: true, // Ensure badge is shown
-    };
-  }
-  return pkg;
+  return {
+    ...pkg,
+    originalPrice: pkg.price,
+    price: pkg.price * discountRate,
+  };
 });
 
 
