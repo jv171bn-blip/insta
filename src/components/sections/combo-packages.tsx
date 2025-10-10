@@ -66,6 +66,17 @@ const packages = comboPackagesData.map(pkg => {
         isDiscount: true,
       }
     }
+
+    if (pkg.followers === 67500) {
+      const finalPrice = 74.90;
+      const originalPrice = 149.80;
+       return {
+        ...pkg,
+        price: finalPrice,
+        originalPrice: originalPrice,
+        isDiscount: true,
+      }
+    }
     
     if (!followerPackage) {
         return { ...pkg, price: 0, originalPrice: 0 };
