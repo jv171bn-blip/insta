@@ -94,6 +94,10 @@ export default function PackageCard({ pkg }: Props) {
     }
   };
 
+  const handleConfirmAndPay = () => {
+    setStep("processing");
+  };
+
   const renderDialogContent = () => {
     switch (step) {
       case "username":
@@ -145,19 +149,28 @@ export default function PackageCard({ pkg }: Props) {
                 R${pkg.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </div>
             </div>
-            <Button asChild className="w-full mt-4 bg-accent hover:bg-accent/90">
-              <Link href={pkg.checkoutLink} target="_blank">
-                Confirmar e Pagar
-              </Link>
+            <Button
+              onClick={handleConfirmAndPay}
+              className="w-full mt-4 bg-accent hover:bg-accent/90"
+            >
+              Confirmar e Pagar
             </Button>
           </>
         );
       case "processing":
         return (
-          <div className="flex flex-col items-center justify-center h-48 gap-4">
-            <Loader2 className="h-12 w-12 animate-spin text-primary" />
-            <p className="font-semibold text-lg">Processando seu pagamento...</p>
-            <p className="text-sm text-muted-foreground">Por favor, aguarde um momento.</p>
+          <div className="h-[60vh] w-full flex flex-col">
+            <DialogHeader>
+                <DialogTitle>Finalize seu Pagamento</DialogTitle>
+            </DialogHeader>
+            <p className="text-sm text-muted-foreground mb-4">
+                Seu pagamento está sendo processado de forma segura.
+            </p>
+            <iframe
+                src={pkg.checkoutLink}
+                className="w-full h-full border-0 rounded-md"
+                title="Checkout"
+            ></iframe>
           </div>
         );
       case "delivering":
@@ -263,7 +276,9 @@ export default function PackageCard({ pkg }: Props) {
         </CardFooter>
       </Card>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent>{renderDialogContent()}</DialogContent>
+        <DialogContent className={cn(step === 'processing' && 'max-w-xl')}>
+          {renderDialogContent()}
+        </DialogContent>
       </Dialog>
     </>
   );
