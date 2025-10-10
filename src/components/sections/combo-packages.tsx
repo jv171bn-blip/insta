@@ -22,13 +22,9 @@ const comboPackagesData: Omit<Package, 'price' | 'originalPrice' | 'isDiscount'>
 const packages = comboPackagesData.map(pkg => {
     const followerPackage = followerPackagesData.find(fp => fp.followers === pkg.followers);
     
-    if (!followerPackage) {
-        return { ...pkg, price: 0, originalPrice: 0 };
-    }
-
     if (pkg.followers === 5000) {
       const finalPrice = 11.90;
-      const originalPrice = 23.80; // Hardcoded original price
+      const originalPrice = 23.80;
        return {
         ...pkg,
         price: finalPrice,
@@ -46,6 +42,21 @@ const packages = comboPackagesData.map(pkg => {
         originalPrice: originalPrice,
         isDiscount: true,
       }
+    }
+
+    if (pkg.followers === 45000) {
+      const finalPrice = 55.50; 
+      const originalPrice = 111.00; 
+       return {
+        ...pkg,
+        price: finalPrice,
+        originalPrice: originalPrice,
+        isDiscount: true,
+      }
+    }
+    
+    if (!followerPackage) {
+        return { ...pkg, price: 0, originalPrice: 0 };
     }
     
     const basePrice = followerPackage.price;
