@@ -20,6 +20,15 @@ const packages = followerPackagesData.map(pkg => {
     }
   }
 
+  if (pkg.followers === 11250) {
+    return {
+      ...pkg,
+      originalPrice: 34.90,
+      price: 22.90,
+      isDiscount: true,
+    }
+  }
+
   const discountRate = pkg.followers >= 11250 ? 0.65 : 0.7; // 35% for >=11.25k, 30% for others
 
   return {
