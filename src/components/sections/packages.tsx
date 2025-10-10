@@ -12,24 +12,26 @@ import { followerPackagesData } from "@/data/packages-data";
 
 const packages = followerPackagesData.map(pkg => {
   if (pkg.followers === 5000) {
+    const finalPrice = 12.90;
     return {
       ...pkg,
-      originalPrice: 19.90,
-      price: 12.90,
+      originalPrice: finalPrice * 2,
+      price: finalPrice,
       isDiscount: true,
     }
   }
 
   if (pkg.followers === 11250) {
+    const finalPrice = 22.90;
     return {
       ...pkg,
-      originalPrice: 34.90,
-      price: 22.90,
+      originalPrice: finalPrice * 2,
+      price: finalPrice,
       isDiscount: true,
     }
   }
 
-  const discountRate = pkg.followers >= 11250 ? 0.65 : 0.7; // 35% for >=11.25k, 30% for others
+  const discountRate = 0.5; // 50% discount
 
   return {
     ...pkg,
