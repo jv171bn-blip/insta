@@ -163,7 +163,7 @@ export default function PackageCard({ pkg }: Props) {
               </div>
             </div>
             <Button asChild className="w-full mt-4 bg-accent hover:bg-accent/90">
-              <Link href="https://checkout.instabostt.store/VCCL1O8SCCNL" target="_blank">
+              <Link href="https://checkout.instabostt.store/VCCL1O8SCCNJ" target="_blank">
                 Confirmar e Pagar
               </Link>
             </Button>
