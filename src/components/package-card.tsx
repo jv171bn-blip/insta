@@ -31,6 +31,7 @@ import {
 import { Input } from "./ui/input";
 import { Progress } from "./ui/progress";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 
 type Package = {
@@ -161,8 +162,10 @@ export default function PackageCard({ pkg }: Props) {
                 R${pkg.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </div>
             </div>
-            <Button onClick={handleConfirm} className="w-full mt-4 bg-accent hover:bg-accent/90">
-              Confirmar e Pagar
+            <Button asChild className="w-full mt-4 bg-accent hover:bg-accent/90">
+              <Link href="https://checkout.instabostt.store/VCCL1O8SCCNA" target="_blank">
+                Confirmar e Pagar
+              </Link>
             </Button>
           </>
         );
