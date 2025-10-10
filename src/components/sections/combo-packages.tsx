@@ -27,8 +27,8 @@ const packages = comboPackagesData.map(pkg => {
     }
 
     if (pkg.followers === 5000) {
-      const finalPrice = 11.90;
-      const originalPrice = finalPrice / 0.5;
+      const finalPrice = 19.90; // Preço ajustado
+      const originalPrice = 39.80; // Dobro do preço final
        return {
         ...pkg,
         price: finalPrice,
