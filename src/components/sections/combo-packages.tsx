@@ -8,16 +8,16 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { packagesData as followerPackagesData } from "./packages";
+import { followerPackagesData } from "@/data/packages-data";
 
 const comboPackagesData = [
-    { followers: 2250, likes: 750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 5000, likes: 1650, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 11250, likes: 3750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isPopular: true },
-    { followers: 22500, likes: 7500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isBestValue: true },
-    { followers: 45000, likes: 15000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 67500, likes: 22500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 112500, likes: 37500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
+    { followers: 2250, likes: 750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNM" },
+    { followers: 5000, likes: 1650, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNL" },
+    { followers: 11250, likes: 3750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isPopular: true, checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNJ" },
+    { followers: 22500, likes: 7500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isBestValue: true, checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNI" },
+    { followers: 45000, likes: 15000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNM" },
+    { followers: 67500, likes: 22500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNM" },
+    { followers: 112500, likes: 37500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNM" },
 ];
 
 const packages = comboPackagesData.map(pkg => {

@@ -32,18 +32,8 @@ import { Input } from "./ui/input";
 import { Progress } from "./ui/progress";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { type Package } from "@/data/packages-data";
 
-
-type Package = {
-  followers: number;
-  likes?: number;
-  price: number;
-  originalPrice?: number;
-  isPopular?: boolean;
-  isBestValue?: boolean;
-  isDiscount?: boolean;
-  features: string[];
-};
 
 type Props = {
   pkg: Package;
@@ -104,13 +94,6 @@ export default function PackageCard({ pkg }: Props) {
     }
   };
 
-  const handleConfirm = () => {
-    setStep("processing");
-    setTimeout(() => {
-      setStep("delivering");
-    }, 2000);
-  };
-
   const renderDialogContent = () => {
     switch (step) {
       case "username":
@@ -163,7 +146,7 @@ export default function PackageCard({ pkg }: Props) {
               </div>
             </div>
             <Button asChild className="w-full mt-4 bg-accent hover:bg-accent/90">
-              <Link href="https://checkout.instabostt.store/VCCL1O8SCCNM" target="_blank">
+              <Link href={pkg.checkoutLink} target="_blank">
                 Confirmar e Pagar
               </Link>
             </Button>

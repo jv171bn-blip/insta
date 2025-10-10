@@ -8,18 +8,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { followerPackagesData } from "@/data/packages-data";
 
-export const packagesData = [
-    { followers: 2250, price: 9.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 5000, price: 19.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 11250, price: 34.90, isPopular: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 22500, price: 59.90, isBestValue: true, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 45000, price: 99.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 67500, price: 129.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-    { followers: 112500, price: 199.90, features: ["Seguidores 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"] },
-];
-
-const packages = packagesData.map(pkg => {
+const packages = followerPackagesData.map(pkg => {
   const discountRate = pkg.followers >= 11250 ? 0.65 : 0.7; // 35% for >=11.25k, 30% for others
 
   return {
