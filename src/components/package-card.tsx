@@ -12,7 +12,6 @@ import {
 import { Button } from "./ui/button";
 import {
   ChevronRight,
-  Loader2,
   Rocket,
   Sparkles,
   User,
@@ -29,23 +28,21 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "./ui/input";
-import { Progress } from "./ui/progress";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import { type Package } from "@/data/packages-data";
 
 
 type Props = {
   pkg: Package;
+  onStartCheckout: (url: string) => void;
 };
 
-type Step = "username" | "confirm" | "processing" | "delivering" | "complete";
+type Step = "username" | "confirm" | "complete";
 
-export default function PackageCard({ pkg }: Props) {
+export default function PackageCard({ pkg, onStartCheckout }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState<Step>("username");
   const [username, setUsername] = useState("");
-  const [progress, setProgress] = useState(0);
   const [formattedFollowers, setFormattedFollowers] = useState<string | number>(pkg.followers);
   const [formattedLikes, setFormattedLikes] = useState<string | number | undefined>(pkg.likes);
 
@@ -60,22 +57,6 @@ export default function PackageCard({ pkg }: Props) {
       setFormattedLikes(pkg.likes.toLocaleString('pt-BR'));
     }
   }, [pkg.followers, pkg.likes]);
-
-  useEffect(() => {
-    if (step === "delivering") {
-      const timer = setInterval(() => {
-        setProgress((prev) => {
-          if (prev >= 100) {
-            clearInterval(timer);
-            setTimeout(() => setStep("complete"), 500);
-            return 100;
-          }
-          return prev + 5;
-        });
-      }, 200);
-      return () => clearInterval(timer);
-    }
-  }, [step]);
   
   useEffect(() => {
     if (!isOpen) {
@@ -83,7 +64,6 @@ export default function PackageCard({ pkg }: Props) {
       setTimeout(() => {
         setStep("username");
         setUsername("");
-        setProgress(0);
       }, 300);
     }
   }, [isOpen]);
@@ -95,7 +75,10 @@ export default function PackageCard({ pkg }: Props) {
   };
 
   const handleConfirmAndPay = () => {
-    setStep("processing");
+    if (pkg.checkoutLink) {
+        onStartCheckout(pkg.checkoutLink);
+        setIsOpen(false);
+    }
   };
 
   const renderDialogContent = () => {
@@ -156,31 +139,6 @@ export default function PackageCard({ pkg }: Props) {
               Confirmar e Pagar
             </Button>
           </>
-        );
-      case "processing":
-        return (
-          <div className="h-[60vh] w-full flex flex-col">
-            <DialogHeader>
-                <DialogTitle>Finalize seu Pagamento</DialogTitle>
-            </DialogHeader>
-            <p className="text-sm text-muted-foreground mb-4">
-                Seu pagamento está sendo processado de forma segura.
-            </p>
-            <iframe
-                src={pkg.checkoutLink}
-                className="w-full h-full border-0 rounded-md"
-                title="Checkout"
-            ></iframe>
-          </div>
-        );
-      case "delivering":
-        return (
-          <div className="flex flex-col items-center justify-center h-48 gap-4">
-            <Rocket className="h-12 w-12 text-primary" />
-            <p className="font-semibold text-lg">Entregando seu Combo!</p>
-            <Progress value={progress} className="w-full" />
-            <p className="text-sm text-muted-foreground">{progress}% completo</p>
-          </div>
         );
       case "complete":
         return (
@@ -276,7 +234,7 @@ export default function PackageCard({ pkg }: Props) {
         </CardFooter>
       </Card>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className={cn(step === 'processing' && 'max-w-xl')}>
+        <DialogContent>
           {renderDialogContent()}
         </DialogContent>
       </Dialog>

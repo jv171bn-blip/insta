@@ -82,7 +82,7 @@ const packages = followerPackagesData.map(pkg => {
 });
 
 
-export default function Packages() {
+export default function Packages({ onStartCheckout }: { onStartCheckout: (url: string) => void }) {
   return (
     <section id="packages" className="py-16">
       <div className="container mx-auto px-0 pt-4">
@@ -105,7 +105,7 @@ export default function Packages() {
             {packages.map((pkg, index) => (
               <CarouselItem key={index} className="pl-4 basis-3/4 md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
-                  <PackageCard pkg={pkg} />
+                  <PackageCard pkg={pkg} onStartCheckout={onStartCheckout} />
                 </div>
               </CarouselItem>
             ))}

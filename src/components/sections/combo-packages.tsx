@@ -106,7 +106,7 @@ const packages = comboPackagesData.map(pkg => {
 });
 
 
-export default function ComboPackages() {
+export default function ComboPackages({ onStartCheckout }: { onStartCheckout: (url: string) => void }) {
   return (
     <section id="combo-packages" className="py-16 bg-muted/50">
       <div className="container mx-auto px-0 pt-4">
@@ -126,7 +126,7 @@ export default function ComboPackages() {
             {packages.map((pkg, index) => (
               <CarouselItem key={index} className="pl-4 basis-3/4 md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
-                  <PackageCard pkg={pkg} />
+                  <PackageCard pkg={pkg} onStartCheckout={onStartCheckout} />
                 </div>
               </CarouselItem>
             ))}
