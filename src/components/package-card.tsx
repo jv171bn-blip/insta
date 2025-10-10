@@ -190,7 +190,7 @@ export default function PackageCard({ pkg }: Props) {
       <Card
         className={cn(
           "flex flex-col transform hover:-translate-y-2 transition-transform duration-300 relative hover:z-20",
-          pkg.isPopular && "border-primary border-2 shadow-primary/20 shadow-lg"
+          (pkg.isPopular || pkg.isBestValue) && "border-primary border-2 shadow-primary/20 shadow-lg"
         )}
       >
         {pkg.isPopular ? (
@@ -199,7 +199,7 @@ export default function PackageCard({ pkg }: Props) {
           </Badge>
         ) : pkg.isBestValue ? (
           <Badge variant="secondary" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-white">
-            Melhor Valor
+            Melhor Custo-Benefício
           </Badge>
         ) : pkg.isDiscount ? (
           <Badge variant="destructive" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white border-green-600">
@@ -256,7 +256,7 @@ export default function PackageCard({ pkg }: Props) {
           <Button
             onClick={handleOpenDialog}
             className="w-full"
-            variant={pkg.isPopular ? "default" : "outline"}
+            variant={(pkg.isPopular || pkg.isBestValue) ? "default" : "outline"}
           >
             Comprar Agora
           </Button>
