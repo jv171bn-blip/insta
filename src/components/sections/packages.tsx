@@ -51,6 +51,16 @@ const packages = followerPackagesData.map(pkg => {
     }
   }
 
+  if (pkg.followers === 67500) {
+    const finalPrice = 80.90;
+    return {
+      ...pkg,
+      originalPrice: finalPrice * 2,
+      price: finalPrice,
+      isDiscount: true,
+    };
+  }
+
   const discountRate = 0.5; // 50% discount
 
   return {
