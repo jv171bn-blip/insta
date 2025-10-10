@@ -19,6 +19,7 @@ import {
   Plus,
   Heart,
   Users,
+  AlertTriangle,
 } from "lucide-react";
 import { Badge } from "./ui/badge";
 import {
@@ -30,6 +31,7 @@ import {
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 import { type Package } from "@/data/packages-data";
+import { Alert, AlertDescription } from "./ui/alert";
 
 
 type Props = {
@@ -90,17 +92,23 @@ export default function PackageCard({ pkg, onStartCheckout }: Props) {
               <DialogTitle>Vamos começar!</DialogTitle>
             </DialogHeader>
             <p className="text-sm text-muted-foreground">
-              Por favor, insira seu nome de usuário do Instagram. Não é necessário senha.
+              Forneça o seu usuário ou link do perfil. Não é necessário senha.
             </p>
             <div className="relative mt-2">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="@usuário"
+                placeholder="@usuario ou link do perfil"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="pl-9"
               />
             </div>
+            <Alert variant="destructive" className="mt-4 bg-amber-500/10 border-amber-500/30 text-amber-500">
+              <AlertTriangle className="h-4 w-4 !text-amber-500" />
+              <AlertDescription className="text-amber-500">
+                Sua conta precisa estar em modo público para receber os seguidores.
+              </AlertDescription>
+            </Alert>
             <Button
               onClick={handleContinue}
               disabled={!username}
@@ -125,8 +133,8 @@ export default function PackageCard({ pkg, onStartCheckout }: Props) {
                 </p>
               </div>
               <div className="rounded-lg border p-4">
-                <p className="text-sm text-muted-foreground">Para o usuário do Instagram</p>
-                <p className="text-2xl font-bold text-primary">{username}</p>
+                <p className="text-sm text-muted-foreground">Para o perfil</p>
+                <p className="text-2xl font-bold text-primary break-all">{username}</p>
               </div>
               <div className="text-center text-4xl font-bold text-accent">
                 R${pkg.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
