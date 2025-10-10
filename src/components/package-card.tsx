@@ -136,8 +136,11 @@ export default function PackageCard({ pkg, onStartCheckout }: Props) {
                 <p className="text-sm text-muted-foreground">Para o perfil</p>
                 <p className="text-2xl font-bold text-primary break-all">{username}</p>
               </div>
-              <div className="text-center text-4xl font-bold text-accent">
-                R${pkg.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+              <div className="rounded-lg border p-4 text-center">
+                <p className="text-sm text-muted-foreground">Valor Total</p>
+                <p className="text-4xl font-bold text-accent">
+                  R${pkg.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                </p>
               </div>
             </div>
             <Button
