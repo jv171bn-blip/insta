@@ -202,8 +202,8 @@ export default function PackageCard({ pkg }: Props) {
             Melhor Custo-Benefício
           </Badge>
         ) : pkg.isDiscount ? (
-          <Badge variant="destructive" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white border-green-600">
-            50% OFF
+          <Badge variant="secondary" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-white">
+            Melhor custo beneficio
           </Badge>
         ) : null}
         <CardHeader className="items-center text-center pt-8">
