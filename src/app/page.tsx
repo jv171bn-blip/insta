@@ -41,7 +41,6 @@ export default function Home() {
             title="Checkout"
           ></iframe>
         </div>
-        <Footer />
       </div>
     );
   }
