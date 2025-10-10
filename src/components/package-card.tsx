@@ -32,6 +32,8 @@ import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 import { type Package } from "@/data/packages-data";
 import { Alert, AlertDescription } from "./ui/alert";
+import { siteConfig } from "@/lib/config";
+import Link from "next/link";
 
 
 type Props = {
@@ -149,6 +151,16 @@ export default function PackageCard({ pkg, onStartCheckout }: Props) {
             >
               Confirmar e Pagar
             </Button>
+            <p className="text-xs text-muted-foreground mt-4 text-center italic">
+              Caso ocorra algum erro ou problema,{" "}
+              <Link
+                href={siteConfig.whatsappLink}
+                target="_blank"
+                className="underline hover:text-primary"
+              >
+                entre em contato com nossa atendente.
+              </Link>
+            </p>
           </>
         );
       case "complete":
