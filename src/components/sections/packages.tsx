@@ -35,7 +35,7 @@ const packages = followerPackagesData.map(pkg => {
     const finalPrice = 39.90;
     return {
       ...pkg,
-      originalPrice: finalPrice * 2,
+      originalPrice: 79.80,
       price: finalPrice,
       isDiscount: true,
     }
@@ -45,7 +45,7 @@ const packages = followerPackagesData.map(pkg => {
     const finalPrice = 59.90;
     return {
       ...pkg,
-      originalPrice: finalPrice * 2,
+      originalPrice: 119.80,
       price: finalPrice,
       isDiscount: true,
     }
@@ -55,7 +55,17 @@ const packages = followerPackagesData.map(pkg => {
     const finalPrice = 80.90;
     return {
       ...pkg,
-      originalPrice: finalPrice * 2,
+      originalPrice: 161.80,
+      price: finalPrice,
+      isDiscount: true,
+    };
+  }
+
+  if (pkg.followers === 112500) {
+    const finalPrice = 125.50;
+    return {
+      ...pkg,
+      originalPrice: 251.00,
       price: finalPrice,
       isDiscount: true,
     };
