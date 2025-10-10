@@ -12,7 +12,7 @@ import { followerPackagesData } from "@/data/packages-data";
 
 const comboPackagesData = [
     { followers: 2250, likes: 750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNM" },
-    { followers: 5000, likes: 1650, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNL" },
+    { followers: 5000, likes: 1650, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNI" },
     { followers: 11250, likes: 3750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isPopular: true, checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNJ" },
     { followers: 22500, likes: 7500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isBestValue: true, checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNI" },
     { followers: 45000, likes: 15000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCNM" },
