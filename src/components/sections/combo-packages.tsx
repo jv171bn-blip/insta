@@ -14,6 +14,7 @@ import { followerPackagesData, type Package } from "@/data/packages-data";
 const comboPackagesData: Omit<Package, 'price' | 'originalPrice' | 'isDiscount'>[] = [
     { followers: 5000, likes: 1650, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCO5" },
     { followers: 11250, likes: 3750, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isPopular: true, checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCO6" },
+    { followers: 22500, likes: 7500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isBestValue: true, checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCO7" },
     { followers: 45000, likes: 15000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCO8" },
     { followers: 67500, likes: 22500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCO9" },
     { followers: 112500, likes: 37500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instabostt.store/VCCL1O8SCCOA" },
@@ -35,8 +36,19 @@ const packages = comboPackagesData.map(pkg => {
 
     if (pkg.followers === 11250) {
       const finalPrice = 19.90; 
-      const originalPrice = 39.80; 
+      const originalPrice = 39.80;
        return {
+        ...pkg,
+        price: finalPrice,
+        originalPrice: originalPrice,
+        isDiscount: true,
+      }
+    }
+
+    if (pkg.followers === 22500) {
+      const finalPrice = 74.90;
+      const originalPrice = 149.80;
+      return {
         ...pkg,
         price: finalPrice,
         originalPrice: originalPrice,
