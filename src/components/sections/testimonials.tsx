@@ -75,26 +75,6 @@ const testimonials = [
   },
 ];
 
-const FollowerAvatars = () => {
-    // Using placeholder images for followers
-    const followerImages = [
-      PlaceHolderImages.find((img) => img.id === "testimonial-2"),
-      PlaceHolderImages.find((img) => img.id === "testimonial-4"),
-      PlaceHolderImages.find((img) => img.id === "testimonial-5"),
-    ];
-  
-    return (
-      <div className="flex -space-x-3">
-        {followerImages.map((follower, index) => (
-          follower && <Avatar key={index} className="w-8 h-8 border-2 border-background">
-            <AvatarImage src={follower.imageUrl} alt="Follower" data-ai-hint="pessoa" />
-            <AvatarFallback>F</AvatarFallback>
-          </Avatar>
-        ))}
-      </div>
-    );
-  };
-
 export default function Testimonials() {
   return (
     <section className="bg-muted/50 py-16">
@@ -128,26 +108,23 @@ export default function Testimonials() {
                           <Star className="h-4 w-4 fill-current" />
                       </div>
                       <p className="text-muted-foreground flex-1">"{testimonial.text}"</p>
-                      <div className="flex items-center justify-between pt-4 border-t w-full">
-                        <div className="flex items-center gap-3">
-                            {testimonial.image && (
-                            <Avatar>
-                                <AvatarImage
-                                src={testimonial.image.imageUrl}
-                                alt={testimonial.name}
-                                data-ai-hint={testimonial.image.imageHint}
-                                />
-                                <AvatarFallback>
-                                {testimonial.name.charAt(0)}
-                                </AvatarFallback>
-                            </Avatar>
-                            )}
-                            <div>
-                            <p className="font-semibold">{testimonial.name}</p>
-                            <p className="text-sm text-muted-foreground">{testimonial.handle}</p>
-                            </div>
+                      <div className="flex items-center gap-3 pt-4 border-t w-full">
+                        {testimonial.image && (
+                          <Avatar>
+                            <AvatarImage
+                              src={testimonial.image.imageUrl}
+                              alt={testimonial.name}
+                              data-ai-hint={testimonial.image.imageHint}
+                            />
+                            <AvatarFallback>
+                              {testimonial.name.charAt(0)}
+                            </AvatarFallback>
+                          </Avatar>
+                        )}
+                        <div>
+                          <p className="font-semibold">{testimonial.name}</p>
+                          <p className="text-sm text-muted-foreground">{testimonial.handle}</p>
                         </div>
-                        <FollowerAvatars />
                       </div>
                     </CardContent>
                   </Card>
