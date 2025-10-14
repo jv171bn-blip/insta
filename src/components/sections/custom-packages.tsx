@@ -2,20 +2,7 @@
 
 import { siteConfig } from "@/lib/config";
 import { Button } from "../ui/button";
-
-const WhatsAppIcon = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="h-10 w-10"
-    >
-        <path d="M16.75 13.96c.25.13.41.2.52.28.1.07.16.15.22.24.06.09.1.2.1.33A1 1 0 0 1 17 16a2.93 2.93 0 0 1-2.12-.88c-.78-.54-1.38-1.2-1.8-1.92-.44-.73-.66-1.5-.66-2.32 0-.2.02-.38.07-.56.05-.2.12-.38.2-.54l.1-.2a.5.5 0 0 1 .6-.23c.2.07.36.14.48.2.14.07.24.16.3.28a.5.5 0 0 1 .09.3c0 .07-.02.15-.05.24-.03.09-.08.2-.14.33-.06.13-.1.24-.13.33-.03.1-.01.2.05.3.06.1.15.2.26.33.1.14.22.27.35.4.13.14.25.27.38.4.12.13.23.23.3.3.08.08.12.12.13.13.04.03.07.03.08.02.02 0 .04-.02.06-.05.02-.03.05-.07.08-.12s.05-.1.05-.12a.5.5 0 0 1 .14-.42c.1-.1.22-.18.35-.25.13-.08.28-.13.44-.15h.2c.15 0 .28.03.4.1Z"></path>
-        <path d="M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10c.78 0 1.54-.09 2.28-.27l3.92 1.22-1.29-3.77A9.9 9.9 0 0 0 22 12a10 10 0 0 0-10-10Zm0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8Z"></path>
-    </svg>
-  );
+import WhatsAppIcon from "../whatsapp-icon";
 
 export default function CustomPackages() {
   return (
@@ -23,7 +10,7 @@ export default function CustomPackages() {
       <div className="container mx-auto px-4">
         <div className="rounded-lg bg-primary p-6 text-primary-foreground shadow-lg text-center">
             <div className="flex justify-center items-center gap-4 mb-4">
-                <WhatsAppIcon />
+                <WhatsAppIcon className="h-10 w-10" />
                 <h3 className="text-3xl font-extrabold">Pacotes Personalizados? 🤔</h3>
             </div>
             <p className="max-w-2xl mx-auto text-lg text-primary-foreground/80">
