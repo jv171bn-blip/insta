@@ -10,7 +10,7 @@ export default function CustomPackages() {
       <div className="container mx-auto px-4">
         <div className="rounded-lg bg-primary p-6 text-primary-foreground shadow-lg text-center">
             <div className="flex justify-center items-center gap-4 mb-4">
-                <WhatsAppIcon className="h-10 w-10" />
+                <WhatsAppIcon className="h-10 w-10 text-primary-foreground fill-primary-foreground" />
                 <h3 className="text-3xl font-extrabold">Pacotes Personalizados? 🤔</h3>
             </div>
             <p className="max-w-2xl mx-auto text-lg text-primary-foreground/80">

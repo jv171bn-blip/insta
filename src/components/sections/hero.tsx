@@ -54,7 +54,7 @@ export default function Hero() {
           <Link href={siteConfig.whatsappLink} target="_blank" className="mt-8 rounded-lg p-4 max-w-md mx-auto bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg border border-green-700 block hover:scale-105 transition-transform">
             <div className="flex justify-center items-center gap-4">
               <div className="flex-shrink-0">
-                <WhatsAppIcon className="h-8 w-8 text-white" />
+                <WhatsAppIcon className="h-8 w-8 text-white fill-white" />
               </div>
               <div className="text-left">
                 <p className="font-bold">
