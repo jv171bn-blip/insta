@@ -35,6 +35,30 @@
       "description": "Um designer gráfico para depoimentos",
       "imageUrl": "https://picsum.photos/seed/t6/100/100",
       "imageHint": "designer retrato"
+    },
+    {
+      "id": "testimonial-7",
+      "description": "Um gamer para depoimentos",
+      "imageUrl": "https://picsum.photos/seed/t7/100/100",
+      "imageHint": "homem jovem"
+    },
+    {
+      "id": "testimonial-8",
+      "description": "Uma influenciadora de moda para depoimentos",
+      "imageUrl": "https://picsum.photos/seed/t8/100/100",
+      "imageHint": "mulher moda"
+    },
+    {
+      "id": "testimonial-9",
+      "description": "Um jovem feliz para depoimentos",
+      "imageUrl": "https://picsum.photos/seed/t9/100/100",
+      "imageHint": "homem sorrindo"
+    },
+    {
+      "id": "testimonial-10",
+      "description": "Um programador para depoimentos",
+      "imageUrl": "https://picsum.photos/seed/t10/100/100",
+      "imageHint": "programador retrato"
     }
   ]
 }
