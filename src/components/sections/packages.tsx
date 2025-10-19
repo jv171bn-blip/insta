@@ -22,7 +22,7 @@ const packages = followerPackagesData.map(pkg => {
   }
 
   if (pkg.followers === 11250) {
-    const finalPrice = 22.90;
+    const finalPrice = 19.90;
     return {
       ...pkg,
       originalPrice: finalPrice * 2,
