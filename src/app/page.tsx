@@ -13,7 +13,6 @@ import SocialProof from "@/components/sections/social-proof";
 import Testimonials from "@/components/sections/testimonials";
 import CustomPackages from "@/components/sections/custom-packages";
 import { Button } from "@/components/ui/button";
-import PromoBanner from "@/components/sections/promo-banner";
 
 export default function Home() {
   const [checkoutUrl, setCheckoutUrl] = useState<string | null>(null);
@@ -52,7 +51,6 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <ComboPackages onStartCheckout={handleStartCheckout} />
-        <PromoBanner />
         <Packages onStartCheckout={handleStartCheckout} />
         <CustomPackages />
         <SocialProof />
