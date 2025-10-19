@@ -12,7 +12,7 @@ export default function PromoBanner() {
             src="https://i.imgur.com/n14a79n.png"
             alt="Promoção Imperdível - Todos os pacotes com 50% de desconto"
             fill
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "cover" }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
