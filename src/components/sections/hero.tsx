@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -16,11 +15,11 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden">
       <Image
-        src="https://picsum.photos/seed/hero-bg/1920/1080"
-        alt="Fundo abstrato com tons de roxo e azul"
+        src="/hero-background.jpg"
+        alt="Cidade à noite vista da água, com prédios iluminados"
         fill
-        className="object-cover -z-20 opacity-10"
-        data-ai-hint="abstract background"
+        className="object-cover -z-20 opacity-20"
+        data-ai-hint="cidade noite"
       />
       
       <div
