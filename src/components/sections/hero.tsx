@@ -75,7 +75,7 @@ export default function Hero() {
           <DialogTrigger asChild>
             <Button
               variant="outline"
-              className="mt-8 mx-auto max-w-sm w-full bg-green-500/10 border-green-500/30 text-green-500 hover:bg-green-500/20 hover:text-green-400"
+              className="mt-8 mx-auto max-w-sm w-full bg-green-500/10 border-green-500/30 text-green-500 hover:bg-green-500/20 hover:text-green-400 !h-auto !whitespace-normal p-3"
             >
               <WhatsAppIcon className="h-5 w-5 mr-2 fill-green-500" />
               Está com problemas ou quer falar com um atendente? Clique aqui.
