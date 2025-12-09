@@ -27,7 +27,9 @@ export default function Logo({ className }: { className?: string }) {
       className={cn("flex items-center gap-2", className)}
     >
       <InstagramIcon />
-      
+      <span className="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-600">
+        Insta Sheik
+      </span>
     </Link>
   );
 }
