@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "InstaBoost - Aumente sua Presença no Instagram",
+  title: "Insta Sheik - Aumente sua Presença no Instagram",
   description:
     "Compre seguidores para o Instagram e aumente sua presença instantaneamente.",
 };
