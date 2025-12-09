@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -9,7 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { ArrowRight, CheckCircle, Rocket } from "lucide-react";
+import { ArrowRight, CheckCircle, Rocket, Star } from "lucide-react";
 import Link from "next/link";
 import WhatsAppIcon from "../whatsapp-icon";
 
@@ -21,9 +22,9 @@ export default function Hero() {
   };
 
   const attendants = [
-    { name: "Atendente 1", link: "/whats?attendant=1" },
-    { name: "Atendente 2", link: "/whats?attendant=2" },
-    { name: "Atendente 3", link: "/whats?attendant=3" },
+    { name: "Atendente Mirella", link: "/whats?attendant=1", rating: "4.9/5" },
+    { name: "Atendente Sofia", link: "/whats?attendant=2", rating: "4.8/5" },
+    { name: "Atendente Laura", link: "/whats?attendant=3", rating: "4.9/5" },
   ];
 
   return (
@@ -83,7 +84,7 @@ export default function Hero() {
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Escolha um atendente</DialogTitle>
+              <DialogTitle>Escolha uma atendente</DialogTitle>
             </DialogHeader>
             <div className="flex flex-col gap-4 mt-4">
               {attendants.map((attendant) => (
@@ -96,10 +97,16 @@ export default function Hero() {
                 >
                   <Button
                     variant="outline"
-                    className="w-full justify-start gap-4 text-lg p-6 bg-green-500/10 border-green-500/30 hover:bg-green-500/20"
+                    className="w-full justify-between gap-4 text-lg p-6 bg-green-500/10 border-green-500/30 hover:bg-green-500/20"
                   >
-                    <WhatsAppIcon className="h-6 w-6 text-green-500 fill-green-500" />
-                    <span>{attendant.name}</span>
+                    <div className="flex items-center gap-4">
+                      <WhatsAppIcon className="h-6 w-6 text-green-500 fill-green-500" />
+                      <span>{attendant.name}</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-sm text-amber-500">
+                      <Star className="h-4 w-4 fill-current"/>
+                      <span>({attendant.rating})</span>
+                    </div>
                   </Button>
                 </Link>
               ))}
