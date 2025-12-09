@@ -23,7 +23,7 @@ export default function Hero() {
 
   const attendants = [
     { name: "Atendente Mirella", link: "/whats?attendant=1", rating: "4.9/5" },
-    { name: "Atendente Sofia", link: "/whats?attendant=2", rating: "4.8/5" },
+    { name: "Atendente Fernanda", link: "/whats?attendant=2", rating: "4.8/5" },
     { name: "Atendente Laura", link: "/whats?attendant=3", rating: "4.9/5" },
   ];
 
