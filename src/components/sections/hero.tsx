@@ -54,16 +54,14 @@ export default function Hero() {
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {[1, 2, 3].map((i) => (
               <Link key={i} href={siteConfig.whatsappLink} target="_blank" className="rounded-lg p-4 bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg border border-green-700 block hover:scale-105 transition-transform">
-                <div className="flex justify-center items-center gap-4">
-                  <div className="flex-shrink-0">
-                    <WhatsAppIcon className="h-8 w-8 text-white fill-white" />
-                  </div>
-                  <div className="text-left">
+                <div className="flex flex-col justify-center items-center text-center gap-2">
+                  <WhatsAppIcon className="h-8 w-8 text-white fill-white" />
+                  <div>
                     <p className="font-bold">
-                      Prefere comprar pelo WhatsApp?
+                      Compre via WhatsApp
                     </p>
                     <p className="text-sm text-green-100">
-                      Nossos atendentes estão disponíveis 24h por dia!
+                      Atendente disponível 24h!
                     </p>
                   </div>
                 </div>
