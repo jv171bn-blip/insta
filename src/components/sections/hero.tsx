@@ -13,13 +13,14 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-background">
       <Image
         src="/hero-background.jpg"
         alt="Cidade à noite vista da água, com prédios iluminados"
         fill
         className="object-cover -z-20 opacity-20"
         data-ai-hint="cidade noite"
+        priority
       />
       
       <div
