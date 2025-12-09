@@ -6,27 +6,35 @@ import { ArrowRight, CheckCircle, Rocket } from "lucide-react";
 import Link from "next/link";
 import WhatsAppIcon from "../whatsapp-icon";
 import { siteConfig } from "@/lib/config";
+import Image from "next/image";
 
 export default function Hero() {
-
   const scrollToPackages = () => {
     document.getElementById("packages")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section className="relative overflow-hidden">
-      <Rocket className="absolute -left-16 -top-16 h-72 w-72 text-primary/10 -z-10 animate-rocket-float" />
+      <Image
+        src="https://picsum.photos/seed/hero-bg/1920/1080"
+        alt="Fundo abstrato com tons de roxo e azul"
+        fill
+        className="object-cover -z-20 opacity-10"
+        data-ai-hint="abstract background"
+      />
+      
       <div
         aria-hidden="true"
-        className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20"
+        className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20 -z-10"
       >
         <div className="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
         <div className="blur-[106px] h-32 bg-gradient-to-r from-accent to-rose-400 dark:to-indigo-600"></div>
       </div>
+      
       <div className="container mx-auto px-4 pt-24 pb-16 text-center relative">
         <h1 className="text-4xl font-extrabold tracking-tight font-headline">
           Aumente Sua Presença no Instagram 🚀{" "}
-          <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-600">
+          <span className="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-600">
             Insta Sheik
           </span>
         </h1>
