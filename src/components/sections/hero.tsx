@@ -1,31 +1,17 @@
 
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { ArrowRight, CheckCircle, Rocket, Star } from "lucide-react";
+import { ArrowRight, CheckCircle, Rocket } from "lucide-react";
 import Link from "next/link";
 import WhatsAppIcon from "../whatsapp-icon";
+import { siteConfig } from "@/lib/config";
 
 export default function Hero() {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const scrollToPackages = () => {
     document.getElementById("packages")?.scrollIntoView({ behavior: "smooth" });
   };
-
-  const attendants = [
-    { name: "Atendente Mirella", link: "/whats?attendant=1", rating: "4.9/5" },
-    { name: "Atendente Fernanda", link: "/whats?attendant=2", rating: "4.8/5" },
-    { name: "Atendente Laura", link: "/whats?attendant=3", rating: "4.9/5" },
-  ];
 
   return (
     <section className="relative overflow-hidden">
@@ -72,47 +58,19 @@ export default function Hero() {
           </div>
         </div>
 
-        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogTrigger asChild>
-            <Button
-              variant="outline"
-              className="mt-8 mx-auto max-w-sm w-full bg-green-500/10 border-green-500/30 text-green-500 hover:bg-green-500/20 hover:text-green-400 !h-auto !whitespace-normal p-3"
-            >
-              <WhatsAppIcon className="h-5 w-5 mr-2 fill-green-500" />
-              Está com problemas ou quer falar com um atendente? Clique aqui.
-            </Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Escolha uma atendente</DialogTitle>
-            </DialogHeader>
-            <div className="flex flex-col gap-4 mt-4">
-              {attendants.map((attendant) => (
-                <Link
-                  key={attendant.name}
-                  href={attendant.link}
-                  target="_blank"
-                  className="w-full"
-                  onClick={() => setIsDialogOpen(false)}
-                >
-                  <Button
-                    variant="outline"
-                    className="w-full justify-between gap-4 text-lg p-6 bg-green-500/10 border-green-500/30 hover:bg-green-500/20"
-                  >
-                    <div className="flex items-center gap-4">
-                      <WhatsAppIcon className="h-6 w-6 text-green-500 fill-green-500" />
-                      <span>{attendant.name}</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-sm text-amber-500">
-                      <Star className="h-4 w-4 fill-current"/>
-                      <span>({attendant.rating})</span>
-                    </div>
-                  </Button>
-                </Link>
-              ))}
+        <Link
+          href={siteConfig.whatsappLink}
+          target="_blank"
+          className="mt-8 rounded-lg p-4 max-w-md mx-auto bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg border border-green-700 block hover:scale-105 transition-transform"
+        >
+          <div className="flex items-center justify-center gap-4">
+            <WhatsAppIcon className="h-8 w-8 text-white fill-white" />
+            <div className="text-left">
+              <p className="font-bold text-lg">Prefere comprar pelo WhatsApp?</p>
+              <p className="text-sm">Nosso atendente está disponível 24h por dia!</p>
             </div>
-          </DialogContent>
-        </Dialog>
+          </div>
+        </Link>
       </div>
     </section>
   );
