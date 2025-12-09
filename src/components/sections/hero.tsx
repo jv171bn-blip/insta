@@ -39,8 +39,8 @@ export default function Hero() {
       <div className="container mx-auto px-4 pt-24 pb-16 text-center relative">
         <h1 className="text-4xl font-extrabold tracking-tight font-headline">
           Aumente Sua Presença no Instagram 🚀{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-            Hoje Mesmo
+          <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-600">
+            Insta Sheik
           </span>
         </h1>
         <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -75,7 +75,7 @@ export default function Hero() {
           <DialogTrigger asChild>
             <Button
               variant="outline"
-              className="mt-8 bg-green-500/10 border-green-500/30 text-green-500 hover:bg-green-500/20 hover:text-green-400"
+              className="mt-8 mx-auto max-w-sm w-full bg-green-500/10 border-green-500/30 text-green-500 hover:bg-green-500/20 hover:text-green-400"
             >
               <WhatsAppIcon className="h-5 w-5 mr-2 fill-green-500" />
               Está com problemas ou quer falar com um atendente? Clique aqui.
