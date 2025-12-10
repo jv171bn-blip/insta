@@ -14,20 +14,15 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-background">
-      <Image
-        src="/fundosite.png"
-        alt="Fundo abstrato com gradiente"
-        fill
-        className="object-cover -z-20 opacity-30"
-        priority
-      />
-      
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20 -z-10"
-      >
-        <div className="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
-        <div className="blur-[106px] h-32 bg-gradient-to-r from-accent to-rose-400 dark:to-indigo-600"></div>
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/fundosite.png"
+          alt="Fundo abstrato com gradiente"
+          fill
+          className="object-cover opacity-50"
+          priority
+        />
+        <div className="absolute inset-0 bg-background/60"></div>
       </div>
       
       <div className="container mx-auto px-4 pt-24 pb-16 text-center relative">
