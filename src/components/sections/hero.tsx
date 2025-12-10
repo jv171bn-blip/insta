@@ -13,23 +13,23 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-background">
+    <section className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/fundosite.png"
           alt="Fundo abstrato com gradiente"
           fill
-          className="object-cover opacity-50"
+          className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-background/60"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
       
       <div className="container mx-auto px-4 pt-24 pb-16 text-center relative">
-        <h1 className="text-4xl font-extrabold tracking-tight font-headline">
+        <h1 className="text-4xl font-extrabold tracking-tight font-headline text-white">
           Aumente Sua Presença no Instagram 🚀
         </h1>
-        <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
+        <p className="mt-6 max-w-2xl mx-auto text-lg text-neutral-200">
           Obtenha seguidores brasileiros de alta qualidade, entregues em minutos e
           com segurança total.
         </p>
@@ -42,17 +42,17 @@ export default function Hero() {
             Quero Crescer Agora <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
-        <div className="mt-8 flex justify-center items-center gap-2 text-sm text-muted-foreground sm:gap-6 flex-wrap">
+        <div className="mt-8 flex justify-center items-center gap-2 text-sm text-neutral-300 sm:gap-6 flex-wrap">
           <div className="flex items-center gap-2">
-            <CheckCircle className="h-4 w-4 text-green-500" />
+            <CheckCircle className="h-4 w-4 text-green-400" />
             <span>+10.000 clientes satisfeitos</span>
           </div>
           <div className="flex items-center gap-2">
-            <CheckCircle className="h-4 w-4 text-green-500" />
+            <CheckCircle className="h-4 w-4 text-green-400" />
             <span>Entrega rápida e segura</span>
           </div>
           <div className="flex items-center gap-2">
-            <CheckCircle className="h-4 w-4 text-green-500" />
+            <CheckCircle className="h-4 w-4 text-green-400" />
             <span>Suporte 24h</span>
           </div>
         </div>
