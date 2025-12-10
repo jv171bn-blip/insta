@@ -12,7 +12,7 @@ const InstagramIcon = () => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="h-6 w-6 text-primary"
+      className="h-7 w-7 text-primary"
     >
       <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -27,7 +27,7 @@ export default function Logo({ className }: { className?: string }) {
       className={cn("flex items-center gap-2", className)}
     >
       <InstagramIcon />
-      <span className="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-600">
+      <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-600">
         Insta Sheik
       </span>
     </Link>
