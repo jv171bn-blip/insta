@@ -33,10 +33,7 @@ export default function Hero() {
       
       <div className="container mx-auto px-4 pt-24 pb-16 text-center relative">
         <h1 className="text-4xl font-extrabold tracking-tight font-headline">
-          Aumente Sua Presença no Instagram 🚀{" "}
-          <span className="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-600">
-            Insta Sheik
-          </span>
+          Aumente Sua Presença no Instagram 🚀
         </h1>
         <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
           Obtenha seguidores brasileiros de alta qualidade, entregues em minutos e
