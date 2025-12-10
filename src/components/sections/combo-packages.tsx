@@ -17,7 +17,7 @@ const comboPackagesData: Omit<Package, 'price' | 'originalPrice' | 'isDiscount' 
     { followers: 22500, likes: 7500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], isBestValue: false, checkoutLink: "https://checkout.instasheik.shop/VCCL1O8SCCO7" },
     { followers: 45000, likes: 15000, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instasheik.shop/VCCL1O8SCCO8" },
     { followers: 67500, likes: 22500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instasheik.shop/VCCL1O8SCCO9" },
-    { followers: 112500, likes: 37500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instasheik.store/VCCL1O8SCCOA" },
+    { followers: 112500, likes: 37500, features: ["Seguidores e Curtidas 100% Brasileiros", "Não afeta o desempenho", "Garantia anti-queda"], checkoutLink: "https://checkout.instasheik.shop/VCCL1O8SCLN3" },
 ];
 
 const packages = comboPackagesData.map(pkg => {
