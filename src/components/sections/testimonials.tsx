@@ -16,7 +16,7 @@ const testimonials = [
   {
     name: "Jéssica P.",
     handle: "@jessfit",
-    text: "Tava meio assim no começo, mas o InstaBoost entregou DEMAIS! Meu engajamento subiu mto e fechei minha 1ª publi. Mto grata!",
+    text: "Tava meio assim no começo, mas o InstaSheik entregou DEMAIS! Meu engajamento subiu mto e fechei minha 1ª publi. Mto grata!",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-1"),
   },
   {
@@ -52,7 +52,7 @@ const testimonials = [
   {
     name: "Lucas G.",
     handle: "@lucasgamer",
-    text: "No meu nicho que é super concorrido (games), cada seguidor conta. O InstaBoost me ajudou a ter uma base sólida pra começar. Recomendo 100%!",
+    text: "No meu nicho que é super concorrido (games), cada seguidor conta. O InstaSheik me ajudou a ter uma base sólida pra começar. Recomendo 100%!",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-7"),
   },
   {
