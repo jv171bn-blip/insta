@@ -18,7 +18,7 @@ export default function Hero() {
         src="/fundosite.png"
         alt="Fundo abstrato com gradiente"
         fill
-        className="object-cover -z-20 opacity-20"
+        className="object-cover -z-20 opacity-30"
         priority
       />
       
